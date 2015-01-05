@@ -1,0 +1,337 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+
+
+
+
+
+
+
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>HTTP Builder - GET Examples</title>
+    <style type="text/css" media="all">
+      @import url("../css/maven-base.css");
+      @import url("../css/maven-theme.css");
+      @import url("../css/site.css");
+    </style>
+    <link rel="stylesheet" href="../css/print.css" type="text/css" media="print" />
+        <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+      </head>
+  <body class="composite">
+    <div id="banner">
+                  <a href="index.html" id="bannerLeft">
+    
+                                            <img src="../images/logo.png" alt="" />
+    
+            </a>
+                        <a href="../../" id="bannerRight">
+    
+                                    <img src="http://media.xircles.codehaus.org/_projects/groovy/_logos/medium.png" alt="" />
+    
+            </a>
+            <div class="clear">
+        <hr/>
+      </div>
+    </div>
+    <div id="breadcrumbs">
+          
+  
+
+  
+    
+            
+  
+    
+            <div class="xleft">
+        Version: 0.5.0-SNAPSHOT
+              </div>
+            <div class="xright">      
+  
+
+  
+    
+            
+  
+    
+             Last Published: 2009-06-15
+            </div>
+      <div class="clear">
+        <hr/>
+      </div>
+    </div>
+    <div id="leftColumn">
+      <div id="navcolumn">
+           
+  
+
+  
+    
+            
+  
+    
+                   <h5>Overview</h5>
+            <ul>
+              
+    <li class="none">
+                    <a href="../home.html">Home</a>
+          </li>
+              
+    <li class="none">
+                    <a href="../index.html">News</a>
+          </li>
+              
+    <li class="none">
+                    <a href="../download.html">Download</a>
+          </li>
+              
+                
+              
+            
+            
+      
+            
+      
+            
+      
+            
+      
+            
+      
+            
+      
+            
+      
+            
+      
+              
+            <li class="expanded">
+                    <a href="../doc/index.html">Documentation</a>
+                  <ul>
+                  
+    <li class="none">
+              <strong>GET Examples</strong>
+        </li>
+                  
+    <li class="none">
+                    <a href="../doc/post.html">POST Examples</a>
+          </li>
+                  
+    <li class="none">
+                    <a href="../doc/json.html">JSON</a>
+          </li>
+                  
+    <li class="none">
+                    <a href="../doc/xml.html">XML</a>
+          </li>
+                  
+    <li class="none">
+                    <a href="../doc/rest.html">RESTClient</a>
+          </li>
+                  
+    <li class="none">
+                    <a href="../doc/async.html">AsyncHTTPBuilder</a>
+          </li>
+                  
+    <li class="none">
+                    <a href="../doc/contentTypes.html">Content Types</a>
+          </li>
+                  
+    <li class="none">
+                    <a href="../doc/uribuilder.html">URIBuilder</a>
+          </li>
+                  
+    <li class="none">
+                    <a href="../doc/ssl.html">SSL</a>
+          </li>
+              </ul>
+        </li>
+              
+    <li class="none">
+                    <a href="../apidocs/index.html">JavaDoc</a>
+          </li>
+              
+    <li class="none">
+                    <a href="../changes.html">Changelog</a>
+          </li>
+              
+    <li class="none">
+                    <a href="http://twitter.com/httpbuilder" class="externalLink">Twitter!</a>
+          </li>
+              
+    <li class="none">
+                    <a href="../home.html#Support">Support</a>
+          </li>
+              
+    <li class="none">
+                    <a href="../about.html">About</a>
+          </li>
+          </ul>
+              <h5>Additional Reference</h5>
+            <ul>
+              
+    <li class="none">
+                    <a href="../../../Documentation">Groovy</a>
+          </li>
+              
+    <li class="none">
+                    <a href="http://hc.apache.org/httpcomponents-client/" class="externalLink">HttpClient</a>
+          </li>
+              
+    <li class="none">
+                    <a href="http://hc.apache.org/httpcomponents-core/" class="externalLink">HttpCore</a>
+          </li>
+              
+    <li class="none">
+                    <a href="http://json-lib.sourceforge.net/" class="externalLink">JSON-Lib</a>
+          </li>
+              
+    <li class="none">
+                    <a href="http://nekohtml.sourceforge.net/" class="externalLink">NekoHTML</a>
+          </li>
+          </ul>
+              <h5>Project Documentation</h5>
+            <ul>
+              
+                
+              
+      
+            
+      
+            
+      
+            
+      
+            
+      
+            
+      
+            
+      
+            
+      
+            
+      
+            
+      
+              
+        <li class="collapsed">
+                    <a href="../project-info.html">Project Information</a>
+                </li>
+              
+                
+              
+      
+            
+      
+            
+      
+            
+      
+            
+      
+            
+      
+              
+        <li class="collapsed">
+                    <a href="../project-reports.html">Project Reports</a>
+                </li>
+          </ul>
+                                           <a href="http://maven.apache.org/" title="Built by Maven" class="poweredBy">
+            <img alt="Built by Maven" src="../images/logos/maven-feather.png"></img>
+          </a>
+                       
+  
+
+  
+    
+            
+  
+    
+        </div>
+    </div>
+    <div id="bodyColumn">
+      <div id="contentBox">
+        <div class="section"><h2>Simplified GET Request</h2>
+<p>HTTPBuilder has convenience methods for <tt>GET</tt> and <tt><a href="post.html">POST</a></tt> methods. Here is a simple HTTP <tt>GET</tt> which parses the response as a DOM object:</p>
+<div class="source"><pre>def http = new HTTPBuilder('http://www.google.com')
+
+def html = http.get( path : '/search', query : [q:'Groovy'] )
+
+assert html instanceof GPathResult
+assert html.HEAD.size() == 1
+assert html.BODY.size() == 1</pre>
+</div>
+<p>In the above example, we are making a request, and automatically parsing the HTML response based on the response's content-type header. The HTML stream is normalized (thanks to <a href="http://nekohtml.sourceforge.net/" class="externalLink">Neko,</a>) and then parsed by an <a href="http://groovy.codehaus.org/Reading+XML+using+Groovy%27s+XmlSlurper" class="externalLink">XmlSlurper</a> for easy DOM parsing. </p>
+<p>We are also taking advantage of HTTPBuilder's <a href="../apidocs/groovyx/net/http/HTTPBuilder.html#defaultSuccessHandler(org.apache.http.HttpResponse,%20java.lang.Object)">default success handler</a> since we're not supplying a 'success' response handler closure. The default handler defined by HTTPBuilder (which can be overridden) simply returns the parsed response data. </p>
+<p>Next is another <tt>GET</tt> request, with custom response-handling logic that prints the response to <tt>System.out</tt>:</p>
+<div class="source"><pre>def http = new HTTPBuilder('http://www.google.com')
+
+http.get( path : '/search', 
+          contentType : TEXT,
+          query : [q:'Groovy'] ) { resp, reader -&gt;
+          
+  println &quot;response status: ${resp.statusLine}&quot;
+  println 'Headers: -----------'
+  resp.headers.each { h -&gt;
+        println &quot; ${h.name} : ${h.value}&quot;
+  }
+  println 'Response data: -----'
+  System.out &lt;&lt; reader
+  println '\n--------------------'
+}</pre>
+</div>
+<p>In this version, the <tt><a href="../apidocs/groovyx/net/http/HTTPBuilder.html#get(java.util.Map,%20groovy.lang.Closure)">get()</a></tt> method also accepts a closure, which is interpreted as the 'success' response handler. A failure response (i.e. status code of 400 or greater) is still handled by the builder's <a href="../apidocs/groovyx/net/http/HTTPBuilder.html#defaultFailureHandler(org.apache.http.HttpResponse)"> default failure handler</a>.</p>
+<p>Additionally, we are telling HTTPBuilder to parse the response as <tt>ContentType.TEXT</tt> - which is a built-in type, handled by the default <tt><a href="../apidocs/groovyx/net/http/ParserRegistry.html#parseText(org.apache.http.HttpResponse)"> ParserRegistry</a></tt> to automatically create a <tt>Reader</tt> from the response data.</p>
+</div>
+<div class="section"><h2><tt>GET</tt> using the <tt>request()</tt> method</h2>
+<p>HTTPBuilder supports a generic <tt>request</tt> method that can be used to configure the request in a fine-grained manner.</p>
+<div class="source"><pre>def http = new HTTPBuilder()
+ 
+http.request( 'http://ajax.googleapis.com', GET, TEXT ) { req -&gt;
+  uri.path = '/ajax/services/search/web'
+  uri.query = [ v:'1.0', q: 'Calvin and Hobbes' ]
+  headers.'User-Agent' = &quot;Mozilla/5.0 Firefox/3.0.4&quot;
+
+  response.success = { resp, stream -&gt;
+    assert resp.statusLine.statusCode == 200
+    println &quot;Got response: ${resp.statusLine}&quot;
+    println &quot;Content-Type: ${resp.headers.'Content-Type'&quot;
+    System.out &lt;&lt; stream // print response stream
+  }
+    
+  response.'404' = {
+    println 'Not found'
+  }
+}</pre>
+</div>
+<p>In the above example, a 'request configuration closure' is defined as the final argument to the request method. This closure allows fine-grained configuration of the request and response handling behavior. Within the closure, there are a number of properties available via the <a href="../apidocs/groovyx/net/http/HTTPBuilder.RequestConfigDelegate.html">closure's delegate</a>. <tt>req</tt> is an instance of <tt><a href="http://hc.apache.org/httpcomponents-core/httpcore/apidocs/index.html?org/apache/http/HttpRequest.html" class="externalLink">HttpRequest</a></tt> to directly access the Apache HttpClient API. </p>
+</div>
+
+      </div>
+    </div>
+    <div class="clear">
+      <hr/>
+    </div>
+    <div id="footer">
+      <div class="xright">&#169;  
+          2008-2009
+    
+          
+  
+
+  
+    
+            
+  
+    
+  </div>
+      <div class="clear">
+        <hr/>
+      </div>
+    </div>
+  </body>
+</html>

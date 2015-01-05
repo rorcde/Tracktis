@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<profilesXml xmlns="http://maven.apache.org/profiles/1.0.0"
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation="http://maven.apache.org/profiles/1.0.0
+       http://maven.apache.org/xsd/profiles-1.0.0.xsd">
+	<profiles>
+		<profile>
+			<id>http-builder</id>
+			<properties>
+		    <twitter.passwd>2c0deH@us!</twitter.passwd>
+			</properties>
+			<activation>
+	      <activeByDefault>true</activeByDefault>
+			</activation>
+		</profile>
+	</profiles>
+</profilesXml>

@@ -1,0 +1,13 @@
+com.aloqa.trax.client
+com.aloqa.trax.client.android
+com.aloqa.trax.client.j2se
+com.aloqa.trax.client.positiontrack
+com.aloqa.trax.client.positiontrack.bluetooth
+com.aloqa.trax.client.positiontrack.lapi
+com.aloqa.trax.client.saps
+com.aloqa.trax.shared.coordref
+com.aloqa.trax.shared.io.logging
+com.aloqa.trax.shared.positiontrack
+com.aloqa.trax.shared.saps
+com.aloqa.trax.shared.saps.exceptions
+com.aloqa.trax.shared.shape

@@ -1,0 +1,308 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+
+
+
+
+
+
+
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>HTTP Builder - Change Log</title>
+    <style type="text/css" media="all">
+      @import url("./css/maven-base.css");
+      @import url("./css/maven-theme.css");
+      @import url("./css/site.css");
+    </style>
+    <link rel="stylesheet" href="./css/print.css" type="text/css" media="print" />
+        <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+      </head>
+  <body class="composite">
+    <div id="banner">
+                  <a href="index.html" id="bannerLeft">
+    
+                                            <img src="images/logo.png" alt="" />
+    
+            </a>
+                        <a href="../../" id="bannerRight">
+    
+                                    <img src="http://media.xircles.codehaus.org/_projects/groovy/_logos/medium.png" alt="" />
+    
+            </a>
+            <div class="clear">
+        <hr/>
+      </div>
+    </div>
+    <div id="breadcrumbs">
+          
+  
+
+  
+    
+            
+  
+    
+            <div class="xleft">
+        Version: 0.5.0-SNAPSHOT
+              </div>
+            <div class="xright">      
+  
+
+  
+    
+            
+  
+    
+             Last Published: 2009-06-15
+            </div>
+      <div class="clear">
+        <hr/>
+      </div>
+    </div>
+    <div id="leftColumn">
+      <div id="navcolumn">
+           
+  
+
+  
+    
+            
+  
+    
+                   <h5>Overview</h5>
+            <ul>
+              
+    <li class="none">
+                    <a href="home.html">Home</a>
+          </li>
+              
+    <li class="none">
+                    <a href="index.html">News</a>
+          </li>
+              
+    <li class="none">
+                    <a href="download.html">Download</a>
+          </li>
+              
+                
+              
+      
+            
+      
+            
+      
+            
+      
+            
+      
+            
+      
+            
+      
+            
+      
+            
+      
+              
+        <li class="collapsed">
+                    <a href="doc/index.html">Documentation</a>
+                </li>
+              
+    <li class="none">
+                    <a href="apidocs/index.html">JavaDoc</a>
+          </li>
+              
+    <li class="none">
+              <strong>Changelog</strong>
+        </li>
+              
+    <li class="none">
+                    <a href="http://twitter.com/httpbuilder" class="externalLink">Twitter!</a>
+          </li>
+              
+    <li class="none">
+                    <a href="home.html#Support">Support</a>
+          </li>
+              
+    <li class="none">
+                    <a href="about.html">About</a>
+          </li>
+          </ul>
+              <h5>Additional Reference</h5>
+            <ul>
+              
+    <li class="none">
+                    <a href="../../Documentation">Groovy</a>
+          </li>
+              
+    <li class="none">
+                    <a href="http://hc.apache.org/httpcomponents-client/" class="externalLink">HttpClient</a>
+          </li>
+              
+    <li class="none">
+                    <a href="http://hc.apache.org/httpcomponents-core/" class="externalLink">HttpCore</a>
+          </li>
+              
+    <li class="none">
+                    <a href="http://json-lib.sourceforge.net/" class="externalLink">JSON-Lib</a>
+          </li>
+              
+    <li class="none">
+                    <a href="http://nekohtml.sourceforge.net/" class="externalLink">NekoHTML</a>
+          </li>
+          </ul>
+              <h5>Project Documentation</h5>
+            <ul>
+              
+                
+              
+      
+            
+      
+            
+      
+            
+      
+            
+      
+            
+      
+            
+      
+            
+      
+            
+      
+            
+      
+              
+        <li class="collapsed">
+                    <a href="project-info.html">Project Information</a>
+                </li>
+              
+                
+              
+      
+            
+      
+            
+      
+            
+      
+            
+      
+            
+      
+              
+        <li class="collapsed">
+                    <a href="project-reports.html">Project Reports</a>
+                </li>
+          </ul>
+                                           <a href="http://maven.apache.org/" title="Built by Maven" class="poweredBy">
+            <img alt="Built by Maven" src="./images/logos/maven-feather.png"></img>
+          </a>
+                       
+  
+
+  
+    
+            
+  
+    
+        </div>
+    </div>
+    <div id="bodyColumn">
+      <div id="contentBox">
+        <div class="section"><h2>Change Log</h2>
+<p>See the <a href="jira-report.html">JIRA Report</a> for a comprehensive change list.</p>
+<div class="section"><h3>v0.5.0 - </h3>
+<ul><li>RESTClient for more REST-ful request API.</li>
+<li>HttpURLClient for a similar API that is compatible with Google App Engine.</li>
+<li>Added resolver catalog for (X)HTML DTDs</li>
+<li>Improved header access API</li>
+<li>Moved project to GMOD Maven repo. New groupId is <tt>org.codehaus.groovy.modules.http-builder</tt></li>
+<li>Changed &quot;url&quot; property names to &quot;uri&quot; (breaking change!) </li>
+<li>HTTPBuilder's &quot;uri&quot; property returns a URIBuilder, to make default URL manipulation easier.</li>
+<li>Renamed SendDelegate to RequestConfigDelegate (possibly breaking change)</li>
+<li>Fixed bug when assigning default URI via named argument</li>
+<li>Fixed default response handlers for AsyncHTTPBuilder</li>
+<li>Fixed illegal character encoding in <tt>URIBuilder.setPath()</tt></li>
+<li>Fixed default response handlers in AsyncHTTPBuilder</li>
+<li>Changed request configuration closure resolution strategy to DELEGATE_FIRST</li>
+</ul>
+</div>
+<div class="section"><h3>v0.4.1 - 04 Mar 2009</h3>
+<ul><li>Fixed double-encoding of URI parameters</li>
+<li>Added proxy support</li>
+<li>Updated to HttpClient 4.0-beta2</li>
+</ul>
+</div>
+<div class="section"><h3>v0.4.0 - 14 Jan 2009</h3>
+<ul><li>Updated default success handler to buffer and return parsed data outside of request/response context</li>
+</ul>
+</div>
+<div class="section"><h3>v0.3.1 - 5 Jan 2009</h3>
+<ul><li>Corrected <tt>ContentType.BINARY</tt> value</li>
+</ul>
+</div>
+<div class="section"><h3>v0.3.0 - 24 Dec 2008</h3>
+<ul><li>Added AsyncHTTPBuilder </li>
+<li>Fixed bug in ParserRegistry.getCharset</li>
+<li>Changed parser resolution to always use given charset unless 'ANY' is used </li>
+<li>Added xref report to site documentation</li>
+<li>Improved header handling</li>
+<li>Fix for NPE when response has no entity (i.e. HEAD)</li>
+</ul>
+</div>
+<div class="section"><h3>v0.2.2 - 18 Dec 2008</h3>
+<ul><li>Fixed bug when 'path' named parameter is a GString</li>
+<li>Removed Java 1.6 dependencies</li>
+<li>Documentation </li>
+</ul>
+</div>
+<div class="section"><h3>v0.2.1 - 16 Dec 2008</h3>
+<ul><li>Changed package name &amp; added to Groovy-contrib</li>
+<li>Added support for GZIP and deflate response content-encoding</li>
+<li>Support for default request headers &amp; changing headers via map access</li>
+<li>Fixed bug from json-lib</li>
+<li>Built-in HTML parsing support via Neko</li>
+<li>Support for multiple equivalent content-types</li>
+<li>Differing request and response content-types</li>
+<li>Only attempt to parse response if the receiving response handler accepts two parameters</li>
+<li>Added license to source code</li>
+</ul>
+</div>
+<div class="section"><h3>v0.1 - 8 Dec 2008</h3>
+<ul><li>Initial release</li>
+</ul>
+</div>
+</div>
+
+      </div>
+    </div>
+    <div class="clear">
+      <hr/>
+    </div>
+    <div id="footer">
+      <div class="xright">&#169;  
+          2008-2009
+    
+          
+  
+
+  
+    
+            
+  
+    
+  </div>
+      <div class="clear">
+        <hr/>
+      </div>
+    </div>
+  </body>
+</html>

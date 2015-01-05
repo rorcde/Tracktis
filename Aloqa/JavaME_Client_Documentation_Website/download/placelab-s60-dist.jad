@@ -1,0 +1,9 @@
+MIDlet-Name: placelab-s60-dist
+MIDlet-Vendor: Intel Research
+MIDlet-1: Stumbler, lighthouse.png, org.placelab.midp.stumbler.StumblerMidlet
+MIDlet-2: PLUtilities, lighthouse.png, org.placelab.midp.PlacelabUtilitiesMidlet
+MIDlet-3: PLExample, lighthouse.png, org.placelab.midp.demo.PlacelabExampleMidlet
+MIDlet-4: GSMonBT, lighthouse.png, org.placelab.midp.stumbler.GSMBTMidlet
+MIDlet-Version: 1.0.0
+MIDlet-Jar-URL: http://dev.aloqa.com/download/placelab-s60-dist.jar
+MIDlet-Jar-Size: 379731

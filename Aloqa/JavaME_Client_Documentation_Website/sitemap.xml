@@ -1,0 +1,974 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+
+<url>
+  <loc>http://dev.aloqa.com/</loc>
+  <priority>0.5</priority>
+  <lastmod>2008-04-24T19:03:47+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://dev.aloqa.com/m/</loc>
+  <priority>0.5</priority>
+  <lastmod>2008-04-24T19:10:51+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://dev.aloqa.com/java/terms.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2008-04-24T18:20:51+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://dev.aloqa.com/ajax_en.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2008-04-21T17:24:26+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://dev.aloqa.com/java_en.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2008-04-21T17:26:41+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://dev.aloqa.com/adc_en.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2008-04-21T17:23:55+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://dev.aloqa.com/sim_prox.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2008-04-21T17:27:20+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://dev.aloqa.com/sim_clique.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2008-04-21T17:27:02+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://dev.aloqa.com/index.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2008-04-24T19:03:47+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://dev.aloqa.com/javadoc/index.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2008-04-24T15:53:20+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://dev.aloqa.com/javadoc/overview-summary.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2008-04-24T15:53:20+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://dev.aloqa.com/javadoc/overview-frame.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2008-04-24T15:53:20+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://dev.aloqa.com/javadoc/allclasses-frame.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2008-04-24T15:53:19+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://dev.aloqa.com/javadoc/overview-tree.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2008-04-24T15:53:20+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://dev.aloqa.com/javadoc/index-all.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2008-04-24T15:53:20+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://dev.aloqa.com/javadoc/help-doc.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2008-04-24T15:53:20+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://dev.aloqa.com/javadoc/index.html?overview-summary.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2008-04-24T15:53:20+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://dev.aloqa.com/javadoc/allclasses-noframe.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2008-04-24T15:53:19+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://dev.aloqa.com/javadoc/com/aloqa/trax/client/package-summary.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2008-04-24T15:53:07+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://dev.aloqa.com/javadoc/com/aloqa/trax/client/android/package-summary.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2008-04-24T15:53:08+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://dev.aloqa.com/javadoc/com/aloqa/trax/client/io/package-summary.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2008-04-24T15:53:09+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://dev.aloqa.com/javadoc/com/aloqa/trax/client/j2se/package-summary.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2008-04-24T15:53:10+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://dev.aloqa.com/javadoc/com/aloqa/trax/client/positiontrack/package-summary.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2008-04-24T15:53:10+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://dev.aloqa.com/javadoc/com/aloqa/trax/client/saps/package-summary.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2008-04-24T15:53:12+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://dev.aloqa.com/javadoc/com/aloqa/trax/shared/coordref/package-summary.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2008-04-24T15:53:13+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://dev.aloqa.com/javadoc/com/aloqa/trax/shared/positiontrack/package-summary.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2008-04-24T15:53:14+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://dev.aloqa.com/javadoc/com/aloqa/trax/shared/saps/package-summary.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2008-04-24T15:53:17+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://dev.aloqa.com/javadoc/com/aloqa/trax/shared/shape/package-summary.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2008-04-24T15:53:19+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://dev.aloqa.com/javadoc/com/aloqa/trax/client/package-frame.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2008-04-24T15:53:07+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://dev.aloqa.com/javadoc/com/aloqa/trax/client/android/package-frame.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2008-04-24T15:53:08+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://dev.aloqa.com/javadoc/com/aloqa/trax/client/io/package-frame.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2008-04-24T15:53:09+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://dev.aloqa.com/javadoc/com/aloqa/trax/client/j2se/package-frame.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2008-04-24T15:53:10+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://dev.aloqa.com/javadoc/com/aloqa/trax/client/positiontrack/package-frame.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2008-04-24T15:53:10+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://dev.aloqa.com/javadoc/com/aloqa/trax/client/saps/package-frame.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2008-04-24T15:53:12+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://dev.aloqa.com/javadoc/com/aloqa/trax/shared/coordref/package-frame.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2008-04-24T15:53:13+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://dev.aloqa.com/javadoc/com/aloqa/trax/shared/positiontrack/package-frame.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2008-04-24T15:53:14+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://dev.aloqa.com/javadoc/com/aloqa/trax/shared/saps/package-frame.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2008-04-24T15:53:17+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://dev.aloqa.com/javadoc/com/aloqa/trax/shared/shape/package-frame.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2008-04-24T15:53:19+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://dev.aloqa.com/javadoc/com/aloqa/trax/client/android/AndroidTraXClient.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2008-04-24T15:53:08+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://dev.aloqa.com/javadoc/com/aloqa/trax/shared/saps/App_SAP_TraXAPI.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2008-04-24T15:53:15+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://dev.aloqa.com/javadoc/com/aloqa/trax/shared/saps/AsynchronousRequest.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2008-04-24T15:53:15+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://dev.aloqa.com/javadoc/com/aloqa/trax/shared/saps/AsynchronousResponse.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2008-04-24T15:53:16+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://dev.aloqa.com/javadoc/com/aloqa/trax/shared/positiontrack/CircularZoneTrigger.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2008-04-24T15:53:14+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://dev.aloqa.com/javadoc/com/aloqa/trax/client/saps/Connection_SAP_Target.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2008-04-24T15:53:11+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://dev.aloqa.com/javadoc/com/aloqa/trax/client/saps/ConnectionParameters.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2008-04-24T15:53:12+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://dev.aloqa.com/javadoc/com/aloqa/trax/shared/shape/Coord.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2008-04-24T15:53:19+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://dev.aloqa.com/javadoc/com/aloqa/trax/shared/coordref/CoordinateReferenceSystem.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2008-04-24T15:53:13+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://dev.aloqa.com/javadoc/com/aloqa/trax/shared/positiontrack/DistanceJob.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2008-04-24T15:53:14+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://dev.aloqa.com/javadoc/com/aloqa/trax/shared/saps/HandleManager.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2008-04-24T15:53:16+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://dev.aloqa.com/javadoc/com/aloqa/trax/shared/saps/HLPMObservation.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2008-04-24T15:53:16+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://dev.aloqa.com/javadoc/com/aloqa/trax/shared/saps/HLPMObservationResponse.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2008-04-24T15:53:16+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://dev.aloqa.com/javadoc/com/aloqa/trax/shared/saps/HLPMRequest.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2008-04-24T15:53:16+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://dev.aloqa.com/javadoc/com/aloqa/trax/shared/saps/HLPMResponse.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2008-04-24T15:53:16+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://dev.aloqa.com/javadoc/com/aloqa/trax/client/j2se/J2SETraXClient.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2008-04-24T15:53:09+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://dev.aloqa.com/javadoc/com/aloqa/trax/shared/saps/KNNRequest.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2008-04-24T15:53:16+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://dev.aloqa.com/javadoc/com/aloqa/trax/shared/saps/KNNResponse.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2008-04-24T15:53:17+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://dev.aloqa.com/javadoc/com/aloqa/trax/client/saps/LLPM_SAP_Target.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2008-04-24T15:53:12+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://dev.aloqa.com/javadoc/com/aloqa/trax/shared/saps/LLPMRequest.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2008-04-24T15:53:17+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://dev.aloqa.com/javadoc/com/aloqa/trax/shared/saps/LLPMResponse.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2008-04-24T15:53:17+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://dev.aloqa.com/javadoc/com/aloqa/trax/client/positiontrack/LocationAPIFactory.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2008-04-24T15:53:10+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://dev.aloqa.com/javadoc/com/aloqa/trax/client/io/LogListener.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2008-04-24T15:53:09+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://dev.aloqa.com/javadoc/com/aloqa/trax/shared/positiontrack/PeriodicJob.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2008-04-24T15:53:14+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://dev.aloqa.com/javadoc/com/aloqa/trax/shared/saps/PollingRequest.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2008-04-24T15:53:17+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://dev.aloqa.com/javadoc/com/aloqa/trax/shared/saps/PollingResponse.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2008-04-24T15:53:18+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://dev.aloqa.com/javadoc/com/aloqa/trax/client/positiontrack/PositionListener.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2008-04-24T15:53:11+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://dev.aloqa.com/javadoc/com/aloqa/trax/client/positiontrack/PositionProvider.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2008-04-24T15:53:11+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://dev.aloqa.com/javadoc/com/aloqa/trax/client/positiontrack/PositionProviderFactory.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2008-04-24T15:53:11+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://dev.aloqa.com/javadoc/com/aloqa/trax/client/saps/PositionSource.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2008-04-24T15:53:12+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://dev.aloqa.com/javadoc/com/aloqa/trax/shared/positiontrack/PositionUpdate.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2008-04-24T15:53:15+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://dev.aloqa.com/javadoc/com/aloqa/trax/shared/positiontrack/PositionUpdateJob.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2008-04-24T15:53:15+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://dev.aloqa.com/javadoc/com/aloqa/trax/client/positiontrack/RandomWaypointFactory.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2008-04-24T15:53:11+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://dev.aloqa.com/javadoc/com/aloqa/trax/shared/saps/SynchronousRequest.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2008-04-24T15:53:18+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://dev.aloqa.com/javadoc/com/aloqa/trax/shared/saps/SynchronousResponse.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2008-04-24T15:53:18+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://dev.aloqa.com/javadoc/com/aloqa/trax/shared/saps/TraXAPI_SAP_App.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2008-04-24T15:53:18+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://dev.aloqa.com/javadoc/com/aloqa/trax/client/TraXClient.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2008-04-24T15:53:08+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://dev.aloqa.com/javadoc/com/aloqa/trax/shared/saps/TraXHandle.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2008-04-24T15:53:18+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://dev.aloqa.com/javadoc/com/aloqa/trax/client/io/TraXLog.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2008-04-24T15:53:09+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://dev.aloqa.com/javadoc/com/aloqa/trax/client/saps/TraXStatus.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2008-04-24T15:53:12+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://dev.aloqa.com/javadoc/com/aloqa/trax/client/saps/TraXStatusListener.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2008-04-24T15:53:13+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://dev.aloqa.com/javadoc/com/aloqa/trax/shared/coordref/WGS84.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2008-04-24T15:53:13+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://dev.aloqa.com/javadoc/com/aloqa/trax/shared/positiontrack/ZoneJob.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2008-04-24T15:53:15+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://dev.aloqa.com/javadoc/com/aloqa/trax/shared/positiontrack/ZoneTrigger.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2008-04-24T15:53:15+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://dev.aloqa.com/javadoc/index.html?overview-tree.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2008-04-24T15:53:20+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://dev.aloqa.com/javadoc/com/aloqa/trax/client/package-tree.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2008-04-24T15:53:08+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://dev.aloqa.com/javadoc/com/aloqa/trax/client/android/package-tree.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2008-04-24T15:53:08+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://dev.aloqa.com/javadoc/com/aloqa/trax/client/io/package-tree.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2008-04-24T15:53:09+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://dev.aloqa.com/javadoc/com/aloqa/trax/client/j2se/package-tree.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2008-04-24T15:53:10+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://dev.aloqa.com/javadoc/com/aloqa/trax/client/positiontrack/package-tree.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2008-04-24T15:53:10+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://dev.aloqa.com/javadoc/com/aloqa/trax/client/saps/package-tree.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2008-04-24T15:53:12+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://dev.aloqa.com/javadoc/com/aloqa/trax/shared/coordref/package-tree.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2008-04-24T15:53:13+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://dev.aloqa.com/javadoc/com/aloqa/trax/shared/positiontrack/package-tree.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2008-04-24T15:53:14+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://dev.aloqa.com/javadoc/com/aloqa/trax/shared/saps/package-tree.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2008-04-24T15:53:17+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://dev.aloqa.com/javadoc/com/aloqa/trax/shared/shape/package-tree.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2008-04-24T15:53:19+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://dev.aloqa.com/javadoc/index.html?index-all.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2008-04-24T15:53:20+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://dev.aloqa.com/javadoc/index.html?help-doc.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2008-04-24T15:53:20+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://dev.aloqa.com/javadoc/constant-values.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2008-04-24T15:53:20+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://dev.aloqa.com/javadoc/index.html?com/aloqa/trax/client/package-summary.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2008-04-24T15:53:20+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://dev.aloqa.com/javadoc/index.html?com/aloqa/trax/client/android/package-summary.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2008-04-24T15:53:20+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://dev.aloqa.com/javadoc/index.html?com/aloqa/trax/client/io/package-summary.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2008-04-24T15:53:20+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://dev.aloqa.com/javadoc/index.html?com/aloqa/trax/client/j2se/package-summary.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2008-04-24T15:53:20+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://dev.aloqa.com/javadoc/index.html?com/aloqa/trax/client/positiontrack/package-summary.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2008-04-24T15:53:20+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://dev.aloqa.com/javadoc/index.html?com/aloqa/trax/client/saps/package-summary.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2008-04-24T15:53:20+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://dev.aloqa.com/javadoc/index.html?com/aloqa/trax/shared/coordref/package-summary.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2008-04-24T15:53:20+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://dev.aloqa.com/javadoc/index.html?com/aloqa/trax/shared/positiontrack/package-summary.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2008-04-24T15:53:20+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://dev.aloqa.com/javadoc/index.html?com/aloqa/trax/shared/saps/package-summary.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2008-04-24T15:53:20+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://dev.aloqa.com/javadoc/index.html?com/aloqa/trax/shared/shape/package-summary.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2008-04-24T15:53:20+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://dev.aloqa.com/javadoc/index.html?com/aloqa/trax/client/android/AndroidTraXClient.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2008-04-24T15:53:20+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://dev.aloqa.com/javadoc/index.html?com/aloqa/trax/shared/saps/App_SAP_TraXAPI.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2008-04-24T15:53:20+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://dev.aloqa.com/javadoc/index.html?com/aloqa/trax/shared/saps/AsynchronousRequest.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2008-04-24T15:53:20+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://dev.aloqa.com/javadoc/index.html?com/aloqa/trax/shared/saps/AsynchronousResponse.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2008-04-24T15:53:20+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://dev.aloqa.com/javadoc/index.html?com/aloqa/trax/shared/positiontrack/CircularZoneTrigger.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2008-04-24T15:53:20+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://dev.aloqa.com/javadoc/index.html?com/aloqa/trax/client/saps/Connection_SAP_Target.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2008-04-24T15:53:20+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://dev.aloqa.com/javadoc/index.html?com/aloqa/trax/client/saps/ConnectionParameters.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2008-04-24T15:53:20+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://dev.aloqa.com/javadoc/index.html?com/aloqa/trax/shared/shape/Coord.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2008-04-24T15:53:20+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://dev.aloqa.com/javadoc/index.html?com/aloqa/trax/shared/coordref/CoordinateReferenceSystem.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2008-04-24T15:53:20+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://dev.aloqa.com/javadoc/index.html?com/aloqa/trax/shared/positiontrack/DistanceJob.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2008-04-24T15:53:20+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://dev.aloqa.com/javadoc/index.html?com/aloqa/trax/shared/saps/HandleManager.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2008-04-24T15:53:20+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://dev.aloqa.com/javadoc/index.html?com/aloqa/trax/shared/saps/HLPMObservation.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2008-04-24T15:53:20+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://dev.aloqa.com/javadoc/index.html?com/aloqa/trax/shared/saps/HLPMObservationResponse.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2008-04-24T15:53:20+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://dev.aloqa.com/javadoc/index.html?com/aloqa/trax/shared/saps/HLPMRequest.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2008-04-24T15:53:20+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://dev.aloqa.com/javadoc/index.html?com/aloqa/trax/shared/saps/HLPMResponse.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2008-04-24T15:53:20+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://dev.aloqa.com/javadoc/index.html?com/aloqa/trax/client/j2se/J2SETraXClient.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2008-04-24T15:53:20+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://dev.aloqa.com/javadoc/index.html?com/aloqa/trax/shared/saps/KNNRequest.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2008-04-24T15:53:20+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://dev.aloqa.com/javadoc/index.html?com/aloqa/trax/shared/saps/KNNResponse.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2008-04-24T15:53:20+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://dev.aloqa.com/javadoc/index.html?com/aloqa/trax/client/saps/LLPM_SAP_Target.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2008-04-24T15:53:20+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://dev.aloqa.com/javadoc/index.html?com/aloqa/trax/shared/saps/LLPMRequest.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2008-04-24T15:53:20+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://dev.aloqa.com/javadoc/index.html?com/aloqa/trax/shared/saps/LLPMResponse.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2008-04-24T15:53:20+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://dev.aloqa.com/javadoc/index.html?com/aloqa/trax/client/positiontrack/LocationAPIFactory.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2008-04-24T15:53:20+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://dev.aloqa.com/javadoc/index.html?com/aloqa/trax/client/io/LogListener.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2008-04-24T15:53:20+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://dev.aloqa.com/javadoc/index.html?com/aloqa/trax/shared/positiontrack/PeriodicJob.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2008-04-24T15:53:20+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://dev.aloqa.com/javadoc/index.html?com/aloqa/trax/shared/saps/PollingRequest.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2008-04-24T15:53:20+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://dev.aloqa.com/javadoc/index.html?com/aloqa/trax/shared/saps/PollingResponse.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2008-04-24T15:53:20+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://dev.aloqa.com/javadoc/index.html?com/aloqa/trax/client/positiontrack/PositionListener.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2008-04-24T15:53:20+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://dev.aloqa.com/javadoc/index.html?com/aloqa/trax/client/positiontrack/PositionProvider.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2008-04-24T15:53:20+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://dev.aloqa.com/javadoc/index.html?com/aloqa/trax/client/positiontrack/PositionProviderFactory.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2008-04-24T15:53:20+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://dev.aloqa.com/javadoc/index.html?com/aloqa/trax/client/saps/PositionSource.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2008-04-24T15:53:20+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://dev.aloqa.com/javadoc/index.html?com/aloqa/trax/shared/positiontrack/PositionUpdate.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2008-04-24T15:53:20+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://dev.aloqa.com/javadoc/index.html?com/aloqa/trax/shared/positiontrack/PositionUpdateJob.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2008-04-24T15:53:20+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://dev.aloqa.com/javadoc/index.html?com/aloqa/trax/client/positiontrack/RandomWaypointFactory.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2008-04-24T15:53:20+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://dev.aloqa.com/javadoc/index.html?com/aloqa/trax/shared/saps/SynchronousRequest.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2008-04-24T15:53:20+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://dev.aloqa.com/javadoc/index.html?com/aloqa/trax/shared/saps/SynchronousResponse.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2008-04-24T15:53:20+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://dev.aloqa.com/javadoc/index.html?com/aloqa/trax/shared/saps/TraXAPI_SAP_App.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2008-04-24T15:53:20+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://dev.aloqa.com/javadoc/index.html?com/aloqa/trax/client/TraXClient.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2008-04-24T15:53:20+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://dev.aloqa.com/javadoc/index.html?com/aloqa/trax/shared/saps/TraXHandle.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2008-04-24T15:53:20+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://dev.aloqa.com/javadoc/index.html?com/aloqa/trax/client/io/TraXLog.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2008-04-24T15:53:20+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://dev.aloqa.com/javadoc/index.html?com/aloqa/trax/client/saps/TraXStatus.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2008-04-24T15:53:20+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://dev.aloqa.com/javadoc/index.html?com/aloqa/trax/client/saps/TraXStatusListener.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2008-04-24T15:53:20+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://dev.aloqa.com/javadoc/index.html?com/aloqa/trax/shared/coordref/WGS84.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2008-04-24T15:53:20+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://dev.aloqa.com/javadoc/index.html?com/aloqa/trax/shared/positiontrack/ZoneJob.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2008-04-24T15:53:20+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://dev.aloqa.com/javadoc/index.html?com/aloqa/trax/shared/positiontrack/ZoneTrigger.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2008-04-24T15:53:20+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://dev.aloqa.com/javadoc/index.html?com/aloqa/trax/client/package-tree.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2008-04-24T15:53:20+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://dev.aloqa.com/javadoc/index.html?com/aloqa/trax/client/android/package-tree.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2008-04-24T15:53:20+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://dev.aloqa.com/javadoc/index.html?com/aloqa/trax/client/io/package-tree.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2008-04-24T15:53:20+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://dev.aloqa.com/javadoc/index.html?com/aloqa/trax/client/j2se/package-tree.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2008-04-24T15:53:20+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://dev.aloqa.com/javadoc/index.html?com/aloqa/trax/client/positiontrack/package-tree.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2008-04-24T15:53:20+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://dev.aloqa.com/javadoc/index.html?com/aloqa/trax/client/saps/package-tree.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2008-04-24T15:53:20+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://dev.aloqa.com/javadoc/index.html?com/aloqa/trax/shared/coordref/package-tree.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2008-04-24T15:53:20+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://dev.aloqa.com/javadoc/index.html?com/aloqa/trax/shared/positiontrack/package-tree.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2008-04-24T15:53:20+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://dev.aloqa.com/javadoc/index.html?com/aloqa/trax/shared/saps/package-tree.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2008-04-24T15:53:20+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://dev.aloqa.com/javadoc/index.html?com/aloqa/trax/shared/shape/package-tree.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2008-04-24T15:53:20+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://dev.aloqa.com/javadoc/index.html?constant-values.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2008-04-24T15:53:20+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+</urlset>

@@ -1,0 +1,134 @@
+body {
+	height: 100%;
+	width: 100%;
+	margin: 0;
+	background-color: #ffffff;
+	background-image: url(../_images/bg.gif);
+	background-repeat: repeat-y;
+	background-position: center;
+}
+body, td {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color: #4d4d4d;
+}
+a:link, a:visited, a:active {
+	color: #000;
+}
+a:hover {
+	color: #dd1d1d;
+	text-decoration: none;
+}
+
+#superdiv {
+	width: 900px;
+	height: 651px;
+	margin: 0 auto;
+	background-image: url(../_images/background.jpg);
+	background-repeat: no-repeat;
+	text-align: left;
+	position: relative;
+	z-index: 1;
+}
+#nav {
+	position: absolute;
+	top: 141px;
+	left: 0px;
+}
+#nav a:link, #nav a:visited, #nav a:active {
+	display: block;
+	width: 143px;
+	background-image:url(../_images/nav_button.gif);
+	background-repeat: no-repeat;
+	background-position: 0px 0px;
+	font-weight: normal;
+	color: #ad051f;
+	text-decoration: none;
+	font-size: 12px;
+	padding: 4px 0px 4px 25px;
+}
+#nav a:hover, #nav a.aktiv:link, #nav a.aktiv:visited, #nav a.aktiv:active {
+	font-weight: bold;
+	background-position: 0px -23px;
+	color: #ffffff;
+}
+#subnav a:link, #subnav a:visited, #subnav a:active {
+	background-image:url(../_images/subnav_button.gif);
+	color: #ffffff;
+	font-size: 11px;
+	padding: 2px 0px 4px 30px;
+}
+#subnav a:hover, #subnav a.aktiv:link, #subnav a.aktiv:visited, #subnav a.aktiv:active {
+	font-weight: bold;
+	background-position: 0px -21px;
+}
+
+#footernav {
+	position: absolute;
+	top: 400px;
+	left: 30px;
+}
+#footernav a:link, #footernav a:visited, #footernav a:active {
+	display: block;
+	padding: 3px 0px;
+	color: #4d4d4d;
+	text-decoration: none;
+}
+#footernav a:hover, #footernav a.aktiv:link, #footernav a.aktiv:visited, #footernav a.aktiv:active {
+	color: #dd1d1d;
+}
+
+#content_container {
+	position: absolute;
+	top: 294px;
+	left: 253px;
+	background-image: url(../_images/content_back.gif);
+	background-repeat: no-repeat;
+	background-position: left top;
+}
+#content_api {
+	position: absolute;
+	top: 294px;
+	width: 900px;
+}
+
+#content {
+	width: 407px;
+}
+#content div {
+	padding: 13px 15px 0px 15px;
+}
+#bild {
+	position: absolute;
+	left: 650px;
+	bottom: 0px;
+}
+#logolink {
+	position: absolute;
+	top: 25px;
+	left: 645px;
+}
+h1 {
+	margin: 0px 0px 10px 0px;
+	padding: 0px;
+	font-size: 16px;
+	font-weight: bold;
+	color: #ea8411;
+}
+h2 {
+	margin: 0px 0px 10px 0px;
+	padding: 0px;
+	font-size: 14px;
+	font-weight: bold;
+}
+
+.partner td {
+	border-top: 1px solid #999;
+}
+
+.header {
+	text-align: center;
+	font-size: 2.2em;
+	letter-spacing: 0.1em;
+}
+

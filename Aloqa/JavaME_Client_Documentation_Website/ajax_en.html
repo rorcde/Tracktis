@@ -1,0 +1,958 @@
+<html>
+<head>
+<title>ALOQA TraX Javascript Library - A gentle introduction</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<script type="text/javascript" src="js/jquery-latest.js"></script>
+<link rel="stylesheet" href="css/jqTOC.css" type="text/css" />
+<script type="text/javascript" src="../_scripts/javascripts.js"></script>
+<link href="../_scripts/styles.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+  h1,h2,h3 { margin-top:2em; }
+</style>
+<link rel="shortcut icon" type="image/x-icon" href="http://aloqa.com/favicon.ico"/>
+
+</head>
+<body>
+<div id="superdiv">
+<div id="logolink"><a href="http://www.aloqa.com/index_en.html" title="ALOQA Home"><img src="../_images/nixx.gif" border="0" width="235" height="60"></a></div>
+
+<div id="content_api">
+	<div class="header">
+	The ALOQA TraX Javascript Library
+</div>
+<br />
+<br />
+<br />
+<div style="width: 800px">
+<p>Welcome to the developer documentation for the Aloqa TraX Javascript API !</p>
+<p>This API lets you integrate location-based services in your web pages. 
+You can poll the position of a target or register for certain location-based events like a target entering an area or two persons approaching each other.
+In order to use this API, you need to <a href="#request_key">request an API key</a>.
+</p>
+<p>
+We're looking forward to your feedback, so send us an email to <a href="mailto:support@aloqa.com">support@aloqa.com</a>.
+</p>
+
+<h1>Table of Contents</h1>
+<ul>
+<li><p><a href="#show_cases"><b>Show Cases</b></a></p></li>
+<li><p><a href="#using_trax"><b>Using the TraX Javascript Library</b></a></p></li>
+<li><p><a href="#class_ref"><b>Class Reference</b></a></p></li>
+<li><p><a href="#faq"><b>Frequently Asked Questions</b></a></p></li>
+</ul>
+</div>
+
+<a name="show_cases"></a>
+<h1>Show Cases</h1>
+<p>
+The following show cases should give you a rough idea of location-based services supported by this API. The first case focuses on the Low Level Location Mangement (LLPM), which lets you poll the position of
+a target or register for events of a target. The second show case presents the High Level Location Management (HLPM), which provides functions to detect spatial relations between targets, like proximity, k-nearest neighbors or clique detection.
+</p>
+<h2>Show Cases for the LLPM API</h2>
+<p>
+	Elvis is running the TraX Client application on his mobile. Presley is sitting in the office, while Elvis is still at home. Presley would like to await Elvis in his office, so he asks you, the developer, if it's possible to "program something" to notify him when Elvis is near the building - this way, Presley can head over to Elvis' office and wait for him there. You say: "No problem, pal."
+</p>
+<p>
+	Elvis (from the previous example) has a son named Costello. Sadly, Costello's been in puberty and is hanging around in places where he should not be. Elvis promised Costello that he won't use the same trick on him as Presly did on Elvis, but somehow, Elvis sometimes likes to know where his son his. So he asks Costello if it's ok for him to monitor the position of him and his friends, knowing that they're still together and not separated by evil folks. Costello refuses, but allows his father to arbitrarily track his position. Satisfied with this solution, Elvis asks you, the developer, if it's possible to "program something" to enable him doing so. You say: "Man, that sounds like Orwell's 1984, but since you're my boss, I'll do it". After testing the system for several days, Elvis tells you that in the beginning, it worked wonderful, but then Costello got fed up and switched his phone off, leaving Elvis in sorrow while getting drunk as hell. Asked if you could "program something" to circumvent this "problem", you say: "Sorry, but this is not Orwell's 1984. TraX (the technology i use) is not capable of tracking your son when his phone is switched off or the TraX client is not running, and it will never be because it cares about individual privacy". Ashamed, Elvis understands and promotes you to a senior developer position.
+</p>
+<h2>Show Cases for the HLPM API</h2>
+<p>
+	Alicia has two wonderful children named Barbie and Ken. Barbie is a bright, responsible twenty-year-old. So, sometimes when Alicia is not at home, she's watching over little Kenny. Ken is not allowed to go anywhere other than Barbie, so Alicia wants to be notified when Ken's distance to barbie gets too large. She asks you, the developer, if you could "program something" to notify her when Ken and Barbie are separated by more than 20 meters. You say: "As good as done."
+</p>
+<p>
+	It's late afternoon, and Alicia (from the previous example) thinks about going out with some friends to their favorite location, since Barbie is so reliable. However, Alicia is bothered by their friends because they're always late. So, she asks you, the developer, to "program something" that would inform her when at least two of her friends already arrived at their favorite location. You say "Wait a sec ... ok, done". Alicia is so happy that she asks you out for dinner (without Barbie and Ken).
+</p>
+
+<a name="using_trax"></a>
+<h1>Using the TraX Javascript Library</h1>
+<p>
+	The TraX Javascript library exposes the Low Level Position Management and the High Level Position Management API to web developers. There is no need to program Java code or running a java application on some dedicated server. All you need is the TraX Javascript library and you're all set.
+</p>
+<p>
+	In the following sections, you'll be gracefully introduced to how to use the library. We'll start with the LLPM API alone, and extend the examples on the HLPM API later. You may also head over to the <a href="#class_ref">class reference section</a>.
+</p>
+<h2>Including the TraX Javascript library into your web page</h2>
+<p>
+	All you need to do to get started with the library is including it into your web page. This is as simple as including arbitrary javascript:
+</p>
+<blockquote class="sourcecode">
+<pre>
+&lt;html&gt;
+&lt;head&gt;
+&lt;script type="text/javascript" src="http://ajax.aloqa.com:8080/TraX/Proxy/js/trax.js"&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+</blockquote>
+<p>
+	This alone won't do much. It just connects to the TraX Server and enables you to use the LLPM and HLPM API.
+</p>
+<h2>Adding a monitor job</h2>
+<p>
+	To actually receive results, you need to invoke actions on the TraX Server first. After including the javascript as shown above, add a monitor job on a certain mobile.
+</p>
+<blockquote class="sourcecode">
+<pre>
+&lt;html&gt;
+&lt;head&gt;
+&lt;script type="text/javascript" src="http://ajax.aloqa.com:8080/TraX/Proxy/js/trax.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript"&gt;
+&lt;!--
+TraX.LLPM.addMonitorJob('some_mobiles_name', 'my_job', new TraX.DistanceJob());
+--&gt;
+&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+</blockquote>
+<p>
+	Assuming that a TraX client is running on a mobile phone, and the username is set to <em>some_mobiles_name</em>, then you'll soon see an alert box popping up, informing you about the received position update. This is the default behaviour which is informative, but is of not much use to end-users. Of course, you'd like to override this default behaviour to match your needs.
+</p>
+<h2>Overriding default handler functions</h2>
+<p>
+	In response to adding monitor jobs on mobiles, a callback function is invoked when results are received from the TraX Server. In case of the LLPM, this callback function can be found at <code>TraX.LLPM.onPositionUpdated(String mobileTerminal, String jobId, TraX.PositionUpdate positionUpdate)</code>. By default, this function pops up a message box, informing you about the received position update. To override this behaviour, specify a callback function like this:
+</p>
+<blockquote class="sourcecode">
+<pre>
+&lt;html&gt;
+&lt;head&gt;
+&lt;script type="text/javascript" src="http://ajax.aloqa.com:8080/TraX/Proxy/js/trax.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript"&gt;
+&lt;!--
+TraX.attach({
+	onPositionUpdated: function(mt, jobId, update) {
+		alert("My own callback function! I received an "+update);
+	}
+});
+TraX.LLPM.addMonitorJob('some_mobiles_name', 'my_job', new TraX.DistanceJob());
+--&gt;
+&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+</blockquote>
+<p>
+	Now, instead of the default callback, your custom callback will be invoked on result retrieval.
+</p>
+
+<h2>Polling the position of a certain mobile</h2>
+<p>
+	As you might have noticed, the call to <code>TraX.LLPM.addMonitorJob('mt','jobid', new TraX.DistanceJob())</code> does not return a single result, but multiple results. It consequently is invoked in an asynchronous manner and causes a callback function to be executed when results are received. But you might wonder how the synchronous calls of the LLPM API, like <code>LLPM.pollPosition(String mt)</code> are implemented. Say, you'd like the TraX Server to ask for the position of a single mobile, and for some reason it takes ages to respond - will the browser be rendered unusable then, since the procedure call is synchronous? And if the procedure call is somehow implemented asynchrous, how are results retrieved then? It's as simple as this:
+</p>
+<blockquote class="sourcecode">
+<pre>
+&lt;html&gt;
+&lt;head&gt;
+&lt;script type="text/javascript" src="http://ajax.aloqa.com:8080/TraX/Proxy/js/trax.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript"&gt;
+&lt;!--
+TraX.LLPM.pollPosition(
+	'some_mobiles_name',
+	function(update) {
+		if(update)
+			alert("i got an update: "+update);
+		else
+			alert("No update for me :("); 
+	}
+);
+--&gt;
+&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+</blockquote>
+<p>
+	It's similar to the <code>TraX.LLPM.onPositionUpdated</code> call above. You need to specify a callback function which is able to handle the expected value, and pass it to the <code>TraX.LLPM.pollPosition</code> call as aditional argument. When a result is returned from the TraX Server, then your callback function is executed and the result is applied to its parameters.
+</p>
+
+<h2>Polling the position of multiple mobile terminals at once</h2>
+<p>
+	As described above, you can also poll the position of multiple mobile terminals at once by writing something like this:
+</p>
+<blockquote class="sourcecode">
+<pre>
+&lt;html&gt;
+&lt;head&gt;
+&lt;script type="text/javascript" src="http://ajax.aloqa.com:8080/TraX/Proxy/js/trax.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript"&gt;
+&lt;!--
+// first, retrieve the names of the mobile terminals to poll &amp; feed them into an array
+var mts = []; mts.push('mt1'); mts.push('mt2');
+TraX.LLPM.pollPositions(
+	mts, // takes an array as argument
+	function(updates) { // your callback function gets an array of position updates as parameter
+		for(k in updates) {
+			if(updates[k]) {
+				alert("i got an update: "+updates[k]);
+			}
+		}
+	}
+);
+--&gt;
+&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+</blockquote>
+Internally, the length of the array is submitted to the TraX Server. Sadly, objects added to an array like <code>mts[0]="mt1";mts[1]="mt2";</code> break the array object, and the length is not returned correctly. So, it's mandatory to add mts as introduced above by using the <code>push</code> method. Also note that one or more of the received updates may be <code>null</code>. 
+<h2>Retrieving a previously set monitor job</h2>
+<p>
+	The concept introduced above is consequently implemented in any call of the LLPM and HLPM API, which (in their respective java version) return a result and are therefore executed in a synchronous manner. Let's look at the <code>LLPM.getMonitorJob(String mt, String jobId)</code> call. In the Javascript TraX Library, it's implemented like this:
+</p>
+<blockquote class="sourcecode">
+<pre>
+&lt;html&gt;
+&lt;head&gt;
+&lt;script type="text/javascript" src="http://ajax.aloqa.com:8080/TraX/Proxy/js/trax.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript"&gt;
+&lt;!--
+TraX.LLPM.getMonitorJob(
+	'some_mobiles_name',
+	function(job) {
+		if(job)
+			alert("i got a job: "+job);
+		else
+			alert("No job for me :("); 
+	}
+);
+--&gt;
+&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+</blockquote>
+<p>
+	Just a hint: This example will always pop up a message box saying "No job for me :(", since you first need to add a job to actually retrieve it. The following example should get you going. It will add a new <code>DistanceJob</code> on the mobile named <em>some_mobiles_name</em>, wait for five seconds, and then retrieve it:
+</p>
+<blockquote class="sourcecode">
+<pre>
+&lt;html&gt;
+&lt;head&gt;
+&lt;script type="text/javascript" src="http://ajax.aloqa.com:8080/TraX/Proxy/js/trax.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript"&gt;
+&lt;!--
+TraX.LLPM.addMonitorJob('some_mobiles_name', 'my_job', new TraX.DistanceJob());
+window.setTimeout(function() {
+	TraX.LLPM.getMonitorJob(
+		'some_mobiles_name',
+		function(job) {
+			if(job)
+				alert("i got a job: "+job);
+			else
+				alert("No job for me :("); 
+		}
+	);
+}, 5000);
+--&gt;
+&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+</blockquote>
+
+<h2>Removing monitor jobs</h2>
+<p>
+	As simple as it can be! The following example adds a monitor job, waits five seconds and then removes the very same monitor job:
+</p>
+
+<blockquote class="sourcecode">
+<pre>
+&lt;html&gt;
+&lt;head&gt;
+&lt;script type="text/javascript" src="http://ajax.aloqa.com:8080/TraX/Proxy/js/trax.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript"&gt;
+&lt;!--
+TraX.LLPM.addMonitorJob('some_mobiles_name', 'my_job', new TraX.DistanceJob());
+window.setTimeout(function() {
+	TraX.LLPM.removeMonitor('some_mobiles_name', 'my_job');
+}, 5000);
+--&gt;
+&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+</blockquote>
+
+<h2>Adding other monitor jobs than a <code>DistanceJob</code></h2>
+<p>
+	As you may know, there are more subtypes of <code>MonitorJob</code> than just <code>DistanceJob</code>. You're free to use a <code>ZoneJob</code>, having a circular or polygonal area assigned as shape, or a <code>PeriodicJob</code>.
+</p>
+<h3>Adding a <code>ZoneJob</code></h3>
+<p>
+	A <code>ZoneJob</code> has a certain area assigned. As soon as someone enters or leaves this area, a position update will be triggered and delivered by <code>TraX.LLPM.onPositionUpdated</code> (when added earlier by <code>TraX.LLPM.addMonitorJob</code>. At the moment, the areas may be of circular or polygonal shape. Besides, you're able to assign a mode to a zone job, meaning that a position update will be triggered when
+</p>
+<ul>
+	<li>someone <em>enters</em> the assigned area</li>
+	<li>somone <em>leaves</em> the assigned area</li>
+	<li>someone <em>enters or leaves</em> the assigned area</li>
+</ul>
+<blockquote class="sourcecode">
+<pre>
+...
+var zoneJob = new TraX.ZoneJob();
+zoneJob.mode = 1; // entering
+zoneJob.mode = 2; // leaving
+zoneJob.mode = 3; // entering or leaving
+...
+</pre>
+</blockquote>
+<h4>Assignig a circular area to a <code>ZoneJob</code></h4>
+<p>
+	The assigned area may be a circular area. To assign a <code>CircularArea</code> to a <code>ZoneJob</code>, do something like this:
+</p>
+<blockquote class="sourcecode">
+<pre>
+...
+var zoneJob = new TraX.ZoneJob();
+var area = new TraX.CircularArea(); // by default, the circular area is a circle of radius 0, 
+					// located at WGS84-Coordinate (x,y,z)=(0.0,0.0,0.0);
+area.radius = 10; // set radius to a value of ten meters
+area.center = new TraX.Coord(11.0, 49.0, 0.0); // set the center of this circular area
+zoneJob.zone = area; // finally, assign the area to the zone job
+...
+</pre>
+</blockquote>
+
+<h4>Assigning a polygonal area to a <code>ZoneJob</code></h4>
+
+<p>
+	Besides circular areas, polygonal areas are also supported. This means, you can create a new <code>PolygonalArea</code> with <code>n</code> coordinates. Please note that TraX itself supports millions of coordinates, but because of limitations set by browser vendors, we're limited to around 100 coordinates on Firefox and Opera. Internet Explorer, Safari and Konqueror are not affected <a href="#footnote1" class="footnote">Please read why</a>. To assign a <code>PolygonalArea</code> to a <code>ZoneJob</code>, do something like this:
+</p>
+<blockquote class="sourcecode">
+<pre>
+...
+var zoneJob = new TraX.ZoneJob();
+var area = new TraX.PolygonalArea(); // by default, the polygonal area has no coords which is senseless
+area.coords.push(new TraX.Coord(11.02343,49.98436,0.0)); // by default, area.coords is an empty array
+... // add as much coordinates as you like - at least, add three coordinates
+area.coords.push(new TraX.Coord(11.45233,48.27638,0.0));
+zoneJob.zone = area; // finally, assign the area to the zone job
+...
+</pre>
+</blockquote>
+
+<h3>Adding a <code>PeriodicJob</code></h3>
+<p>
+	A <code>PeriodicJob</code> causes a mobile terminal to periodically report its position (hence the name). You can create a <code>PeriodicJob</code> like this:
+</p>
+<blockquote class="sourcecode">
+<pre>
+...
+var periodicJob = new TraX.PeriodicJob();
+periodicJob.millis = 5000; // report position every 5 seconds
+...
+</pre>
+</blockquote>
+
+<h2>Assigning custom error, info and debug callbacks</h2>
+<p>
+	Earlier, you learned about <code>TraX.attach</code> and how to use it to override the default callback function <code>TraX.LLPM.onPositionUpdated</code>. But this is not the only function which can be overridden by <code>TraX.attach</code>. When deployed, the error and informational messages are displayed as alert boxes, and debug messages are dropped. To override this behaviour, simply specify your own functions:
+</p>
+<blockquote class="sourcecode">
+<pre>
+&lt;html&gt;
+&lt;head&gt;
+&lt;script type="text/javascript" src="http://ajax.aloqa.com:8080/TraX/Proxy/js/trax.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript"&gt;
+&lt;!--
+TraX.attach({
+	onError: function(msg, e) {
+		document.getElementById('log').innerHTML += "An Error occured: "+msg+"(e?(" Exception is "+
+			new String(e)):"")+"&lt;br /&gt;";
+	},
+	onInfo: function(msg) {
+		document.getElementById('log').innerHTML += msg+"&lt;br /&gt;"
+	},
+	onDebug: function(msg) {
+		document.getElementById('debug').innerHTML += msg+"&lt;br /&gt;"
+	}
+});
+--&gt;
+&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;div id="log"&gt;&lt;/div&gt;
+&lt;div id="debug"&gt;&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+</blockquote>
+<p>
+	Note that the above example is just to show you the possibilities. Since messages (especially debug messages) are likely to occur before the DOM tree is rendered, you'll certainly run into errors since a call to <code>document.getElementById("log")</code> won't return something useful as long as the DOM tree is not rendered yet.
+</p>
+
+
+<h2>Determining the proximity of two mobile terminals</h2>
+<p>
+	In the last few sections, we discovered the possibilities of the Low Level Position Management API. But what is to be done when proximity and/or separation between <strong>two</strong> mobile terminals is to be monitored?
+	<br />
+	Well, we'll use the High Level Position Management API. You can find the implementation of this API in the singleton <code>TraX.HLPM</code>.
+	<br />
+	The following example schedules the monitoring of two mobile terminals. As soon as they approach each other by more than 100 meters, then a message will pop up.
+</p>
+<blockquote class="sourcecode">
+<pre>
+...
+TraX.HLPM.startProximityDetection('mt1', 'mt2', new TraX.HLPM_Parameters(100, 0, 2));
+...
+</pre>
+</blockquote>
+To stop the proximity detection, simply write:
+<blockquote class="sourcecode">
+<pre>
+...
+TraX.HLPM.stopProximityDetection('mt1', 'mt2');
+...
+</pre>
+</blockquote>
+
+<h2>Determining the separation of two mobile terminals</h2>
+<p>
+Analoguously, the detection of a separation between two mobile terminals is also possible. The following example schedules the monitoring of two mobile terminals. As soon as they separate by more than 100 meters, a message will pop up.
+</p>
+<blockquote class="sourcecode">
+<pre>
+...
+TraX.HLPM.startSeparationDetection('mt1', 'mt2', new TraX.HLPM_Parameters(0, 100, 2));
+...
+</pre>
+</blockquote>
+Stopping the separation detection works the same as above:
+<blockquote class="sourcecode">
+<pre>
+...
+TraX.HLPM.stopSeparationDetection('mt1', 'mt2');
+...
+</pre>
+</blockquote>
+
+<h2>Overriding some other default handler functions</h2>
+So you've learned how to start the proximity and separation detection on two mobile terminals, but how do you get rid of these annoying popups? Hmm, sounds familiar ... we had the same situation once, didn't we? Do you remember this code snippet?
+<blockquote class="sourcecode">
+<pre>
+...
+TraX.attach({
+	onPositionUpdated: function(mt, jobId, update) {
+		alert("My own callback function! I received an "+update);
+	}
+});
+...
+</pre>
+</blockquote>
+Well, guess what to do next ...
+<blockquote class="sourcecode">
+<pre>
+...
+TraX.attach({
+	onProximityDetected: function(results) {
+		if(results) {
+			alert("Got some HLPM results: "+results);
+		}
+	},
+	onSeparationDetected: function(results) {
+		if(results) {
+			alert("Got some HLPM results: "+results);
+		}
+	}
+});
+...
+</pre>
+</blockquote>
+The only thing which has to be mentioned is the type of the argument which is fed into the callback. It's of type <code>TraX.HLPM_Results</code> and holds both mobile terminals which are affected as well as their respective positions of type <code>TraX.PositionUpdate</code>. You may want to refer to the <a href="#class_ref">Class Reference</a> for further recherche about these object types.
+
+<h2>Stopping all proximity and separation detection on two mobile terminals</h2>
+It's not even worth an own chapter:
+<blockquote class="sourcecode">
+<pre>
+...
+TraX.HLPM.stopAll();
+...
+</pre>
+</blockquote>
+
+<h2>Checking for proximity or separation between two mobile terminals</h2>
+You may want to see if two mobile terminals are nearby or separated, according to some <code>TraX.HLPM_Parameters</code> you specify, such as a proximity/separation distance and a borderline tolerance. First, let's check if the two mobile terminals <code>mt1</code> and <code>mt2</code> are positioned less then 100 meters to each other.
+<blockquote class="sourcecode">
+<pre>
+...
+var params = new TraX.HLPM_Parameters(0,0,0);
+params.proximityDistance = 100;
+TraX.HLPM.checkProximity(
+	'mt1', 
+	'mt2', 
+	params, 
+	function(nearby) {
+		if(nearby) {
+			alert("mt1 is less than 100 meters from mt2");
+		}
+	}
+);
+...
+</pre>
+</blockquote>
+OK, and now let's check if <code>mt1</code> and <code>mt2</code> are more than 50 meters separated.
+<blockquote class="sourcecode">
+<pre>
+...
+var params = new TraX.HLPM_Parameters(0,0,0);
+params.separationDistance = 50;
+TraX.HLPM.checkProximity(
+	'mt1', 
+	'mt2', 
+	params, 
+	function(separated) {
+		if(separated) {
+			alert("mt1 is more than 50 meters away from mt2");
+		}
+	}
+);
+...
+</pre>
+</blockquote>
+
+<a name="class_ref"></a>
+<h1>Class Reference</h1>
+<h2>TraX</h2>
+<code>TraX</code> is both a namespace where every object which is somehow related to the TraX JavaScript API lives as well as a class with some static methods. These methods include:
+<h3>TraX.attach(json)</h3>
+TraX.attach allows for overriding callback functions. It takes a JSON literal as argument. Valid values for the JSON argument are:
+<ul>
+	<li><tt>onPositionUpdated</tt> - overrides the default callback when a position update is received. Needs a function  which takes a string (mt), another string (jobId) and a <code>TraX.PositionUpdate</code> as arguments.</li>
+	<li><tt>onProximityDetected</tt> - overrides the default callback when proximity between two mobile terminals is detected. Needs a function which takes <code>TraX.HLPM_Results</code> as argument.</li>
+	<li><tt>onSeparationDetected</tt> - overrides the default callback when separation between two mobile terminals is detected. Needs a function which takes <code>TraX.HLPM_Results</code> as argument.</li>
+	<li><tt>onError</tt> - overrides the function which is called when an error occured. Needs a function which takes one string argument as value.</li>
+	<li><tt>onAlert</tt> - overrides the function which is called when an informational message is shown. Needs a function which takes one string argument as value.</li>
+	<li><tt>onDebug</tt> - overrides the function which is called when debug information is shown. By default, this function is <code>null</code> since we don't want the arbitrary user to see debug messages. Needs a function which takes one string argument as value.</li>
+	<li><tt>onAuthenticationError</tt> - overrides the function which is called when the authentication to the servlet failed. Needs a function which takes one string argument as value.</li>
+</ul>
+<br /><b>Example code</b>
+<blockquote class="sourcecode">
+<pre>
+...
+function info(message) {
+	alert("### INFO ###\n"+message);
+}
+TraX.attach({
+	onPositionUpdated: function(update) { alert("my update: "+update); },
+	onError: function(message) { alert("### ERROR ###\n"+message); },
+	onAlert: info
+});
+...
+</pre>
+</blockquote>
+
+<h3>TraX.ready(fn)</h3>
+Takes JavaScript functions as argument which are executed as soon as the DOM tree is rendered (and before(!) any images are loaded).
+<br /><b>Example code</b>
+<blockquote class="sourcecode">
+<pre>
+...
+TraX.ready(function() {
+	alert("Hello DOM Tree!");
+});
+...
+</pre>
+</blockquote>
+
+<h2>TraX.LLPM</h2>
+The class <code>TraX.LLPM</code> exposes the LLPM API to web developers. It is not instantiable; all functions must be accessed statically.
+
+<h3>TraX.LLPM.addMonitorJob(mt, jobId)</h3>
+Adds a monitor job on the mobile terminal named <code>mt</code> with job id <code>jobId</code>.
+<br /><b>Example code</b>
+<blockquote class="sourcecode">
+<pre>
+...
+TraX.LLPM.addMonitorJob('schorsch', 'distjob1');
+...
+</pre>
+</blockquote>
+
+<h3>TraX.LLPM.getMonitorJob(mt, jobId, callback)</h3>
+Retrieves a monitor job from a mobile terminal <code>mt</code> with job id <code>jobId</code>. Returns <code>null</code> when no such mobile terminal is known to the TraX Server. As a third argument, a callback function must be supplied. The callback must be able to take a <code>TraX.MonitorJob</code> as argument. 
+<br /><b>Example code</b>
+<blockquote class="sourcecode">
+<pre>
+TraX.LLPM.getMonitorJob('schorsch', 'distjob1', function(job) {
+	if(job) {
+		alert("Got job: "+job);
+	}
+});
+</pre>
+</blockquote>
+
+
+
+<h3>TraX.LLPM.removeMonitorJob(mt, jobId)</h3>
+Removes a monitor job with job id <code>jobId</code> from the mobiel terminal <code>mt</code>.
+<br /><b>Example code</b>
+<blockquote class="sourcecode">
+<pre>
+...
+TraX.LLPM.removeMonitorJob('schorsch', 'distjob1');
+...
+</pre>
+</blockquote>
+
+
+
+<h3>TraX.LLPM.pollPosition(mt, callback)</h3>
+Polls the position of a single mobile terminal named <code>mt</code>. The position update is returned as argument to the supplied callback function. Note that also <code>null</code> may be returned.
+<br /><b>Example code</b>
+<blockquote class="sourcecode">
+<pre>
+...
+TraX.LLPM.pollPosition('schorsch', function(update) {
+	if(update) {
+		alert('Got position of schorsch: '+update);
+	}
+});
+...
+</pre>
+</blockquote>
+
+
+
+<h3>TraX.LLPM.pollPositions(mts, callback)</h3>
+Polls the position of multiple mobile terminals. Expects an array of strings named <code>mts</code> which stores the names of all mobile terminals from which the positions shall be polled. The result is returned as an array of <code>TraX.PositionUpdate</code> and fed into the supplied callback function. The order of the received updates equals the order of the supplied names. Note that for single array values also <code>null</code> may be returned.
+<br /><b>Example code</b>
+<blockquote class="sourcecode">
+<pre>
+...
+var mts = []; mts.push('hansi'); 
+mts.push('schorsch'); 
+mts.push('alfons');
+TraX.LLPM.pollPositions(mts, function(updates) {
+	for(i in updates) {
+		if(updates[i]) {
+			alert("Got update: "+update[i]);
+		}
+	}
+});
+...
+</pre>
+</blockquote>
+
+<h2>TraX.HLPM</h2>
+The class <code>TraX.HLPM</code> exposes the HLPM API to web developers. It is not instantiable; all functions must be accessed statically.
+
+
+<h3>TraX.HLPM.startProximityDetection(mt1, mt2, params)</h3>
+Starts the proximity detection between two mobile terminals <code>mt1</code> and <code>mt2</code>, according to the supplied <code>params</code> of type <code>TraX.HLPM_Parameters</code>. Results are received by means of <code>TraX.onProximityDetected</code>. 
+<br /><b>Example code</b>
+<blockquote class="sourcecode">
+<pre>
+...
+var params = new TraX.HLPM_Parameters(10, 10, 2);
+TraX.HLPM.startProximityDetection('schorsch', 'hansi', params);
+...
+</pre>
+</blockquote>
+
+
+<h3>TraX.HLPM.stopProximityDetection(mt1, mt2)</h3>
+Stops the proximity detection between the two mobile terminals <code>mt1</code> and <code>mt2</code>.
+<br /><b>Example code</b>
+<blockquote class="sourcecode">
+<pre>
+...
+TraX.HLPM.stopProximityDetection('schorsch', 'hansi');
+...
+</pre>
+</blockquote>
+
+
+<h3>TraX.HLPM.startSeparationDetection(mt1, mt2, params)</h3>
+Starts the separation detection between two mobile terminals <code>mt1</code> and <code>mt2</code>, according to the supplied <code>params</code> of type <code>TraX.HLPM_Parameters</code>. Results are received by means of <code>TraX.onSeparationDetected</code>. 
+<br /><b>Example code</b>
+<blockquote class="sourcecode">
+<pre>
+</pre>
+</blockquote>
+
+
+<h3>TraX.HLPM.stopSeparationDetection(mt1, mt2)</h3>
+Stops the separation detection between the two mobile terminals <code>mt1</code> and <code>mt2</code>.
+<br /><b>Example code</b>
+<blockquote class="sourcecode">
+<pre>
+...
+TraX.HLPM.stopSeparationDetection('schorsch', 'hansi');
+...
+</pre>
+</blockquote>
+
+
+<h3>TraX.HLPM.stopAll()</h3>
+Stops all running separation and proximity detections.
+<br /><b>Example code</b>
+<blockquote class="sourcecode">
+<pre>
+...
+TraX.HLPM.stopAll();
+...
+</pre>
+</blockquote>
+
+
+<h3>TraX.HLPM.checkProximity(mt1, mt2, params, callback)</h3>
+Checks the proximity between two mobile terminals <code>mt1</code> and <code>mt2</code>, according to the given params of type <code>TraX.HLPM_Parameters</code>. Also expects a callback function which takes one argument of type <code>boolean</code>.
+<br /><b>Example code</b>
+<blockquote class="sourcecode">
+<pre>
+...
+TraX.HLPM.checkProximity(
+	'schorsch', 
+	'hansi', 
+	new TraX.HLPM_Parameters(10, 10, 2), 
+	function(p) {
+		alert('schorsch and hansi are '+(p?'nearby':'separated'));
+	}
+);
+...
+</pre>
+</blockquote>
+
+
+
+<h3>TraX.HLPM.checkSeparation(mt1, mt2, params, callback)</h3>
+Checks the separation between two mobile terminals <code>mt1</code> and <code>mt2</code>, according to the given params of type <code>TraX.HLPM_Parameters</code>. Also expects a callback function which takes one argument of type <code>boolean</code>.
+<br /><b>Example code</b>
+<blockquote class="sourcecode">
+<pre>
+...
+TraX.HLPM.checkSeparation(
+	'schorsch', 
+	'hansi', 
+	new TraX.HLPM_Parameters(10, 10, 2), 
+	function(p) {
+		alert('schorsch and hansi are '+(p?'separated':'nearby'));
+	}
+);
+...
+</pre>
+</blockquote>
+
+<h2>TraX.Coord</h2>
+This is an implementation of a simple (x,y,z)-based coordinate. Its properties must be set by its constructor or may be accessed directly. Note that you are allowed to supply integer values as parameters.
+<br /><b>Example code</b>
+<blockquote class="sourcecode">
+<pre>
+...
+var coord1 = new TraX.Coord(0, 0, 0);
+coord1.x = 11.0;
+coord1.y = 13.0;
+var coord2 = new TraX.Coord(11.0, 13.0, 0);
+// coord1 and coord2 are the same	
+...
+</pre>
+</blockquote>
+
+<h2>TraX.Serializable</h2>
+This is an abstract base class which every JavaScript object must inherit when it shall be serialized. Serializing an object is necessary to send it to the TraX Proxy Servlet. Normally, this class is of no concern for you if you're a web developer.
+
+<h2>TraX.MonitorJob</h2>
+This is an abstract base class which implements a monitor job. As a web developer, you surely like to instantiate &quote;more useful&quot; subclasses of <code>TraX.MonitorJob</code>, such as a <code>TraX.DistanceJob</code>, a <code>TraX.PeriodicJob</code> or a <code>TraX.ZoneJob</code>.
+
+<h3>TraX.DistanceJob</h3>
+A distance job has a start coordinate and a distance. Both properties are accessible via the initialized distance job.
+<br /><b>Example code</b>
+<blockquote class="sourcecode">
+<pre>
+...
+var job = new TraX.DistanceJob();
+job.distance = 100;
+job.startCoord = new TraX.Coord(11.0, 49.0, 0.0);
+...
+</pre>
+</blockquote>
+
+<h3>TraX.PeriodicJob</h3>
+A periodic job has a time interval, given in milliseconds. This property is accessible via the initialized periodic job.
+<br /><b>Example code</b>
+<blockquote class="sourcecode">
+<pre>
+...
+var job = new TraX.PeriodicJob();
+job.millis = 5000;
+...
+</pre>
+</blockquote>
+
+<h3>TraX.ZoneJob</h3>
+A zone job has a mode (which can be 1 for ENTERING, 2 for LEAVING or 3 for ENTERING_OR_LEAVING) and a zone of type <code>TraX.Shape</code>. Implementing classes of <code>TraX.Shape</code> are <code>TraX.CircularArea</code> and <code>TraX.PolygonalArea</code>. Both properties are accessible via the initialized zone job.
+<br /><b>Example code</b>
+<blockquote class="sourcecode">
+<pre>
+...
+var job1 = new TraX.ZoneJob();
+job1.mode = 1; // ENTERING
+job1.zone = new TraX.CircularArea();
+...
+var job2 = new TraX.ZoneJob();
+job2.mode = 3; // ENTERING OR LEAVING
+job2.zone = new TraX.PolygonalArea();
+</pre>
+</blockquote>
+
+
+<h2>TraX.Shape</h2>
+This is an abstract base class which shall not be initialized directly. A web developer may have a look at the following subclasses instead:
+<h3>TraX.CircularArea</h3>
+A class which is representing a circular area. It has a center of type <code>TraX.Coord</code> and a radius of type <code>float</code>.
+<br /><b>Example code</b>
+<blockquote class="sourcecode">
+<pre>
+...
+var area = new TraX.CircularArea();
+area.center = new TraX.Coord(11.0, 49.0, 0);
+area.radius = 120.0;
+...
+</pre>
+</blockquote>
+
+<h3>TraX.PolygonalArea</h3>
+A class which is representing an area with edges and nodes. Each node is of type <code>TraX.Coord</code> and stored as an array. Please note: Adding coordinates to this array shall only happen by using the array's native <code>push</code> function, as introduced in the sample code.
+<br /><b>Example code</b>
+<blockquote class="sourcecode">
+<pre>
+...
+var area = new TraX.PolygonalArea();
+// CORRECT
+area.coords.push(new TraX.Coord(11.0, 49.0, 0));
+area.coords.push(new TraX.Coord(11.4875, 48.974, 0));
+area.coords.push(new TraX.Coord(11.2958, 49.1423, 0));
+// WRONG - will break the serialization mechanism
+area.coords[0] = (new TraX.Coord(11.0, 49.0, 0));
+area.coords[1] = (new TraX.Coord(11.4875, 48.974, 0));
+area.coords[2] = (new TraX.Coord(11.2958, 49.1423, 0));
+...
+</pre>
+</blockquote>
+<h2>TraX.PositionUpdate</h2>
+This class represents an update of a position. It consists of the actual position (<code>point</code>) itself of type <code>TraX.Coord</code>, the coordinate reference system (<code>refsys</code>), given as integer, accuracy (<code>acc</code>) of JavaScript's native <code>integer</code> type and a <code>warning</code> flag of type <code>boolean</code>.
+<br /><b>Example code</b>
+<blockquote class="sourcecode">
+<pre>
+...
+var update = new TraX.PositionUpdate();
+update.point = new TraX.Coord(11.0, 49.0, 0);
+update.refsys = 1; // WGS84
+update.acc = 10; // accuracy is set to ten meters
+update.warning = true; // warning flag is set
+...
+</pre>
+</blockquote>
+
+<h2>TraX.HLPM_Parameters</h2>
+This class describes several parameters needed for certain HLPM-related operations. It has three properties which must be set by the constructor and may be altered afterwards by directly accessing the object's properties. It holds information about <code>proximityDistance</code>, <code>separationDistance</code> and <code>borderlineTolerance</code>, all three of type <code>integer</code>
+<br /><b>Example code</b>
+<blockquote class="sourcecode">
+<pre>
+...
+var params = new TraX.HLPM_Parameters(/*prox.Dist.*/ 10, /*sep.Dist.*/ 10, /*borderl.Tol.*/ 2);
+params.borderlineTolerance = 3;
+...
+</pre>
+</blockquote>
+
+<h2>TraX.HLPM_Results</h2>
+This class holds information about two mobile terminals of type <code>string</code> and their respective positions of type <code>TraX.PositionUpdate</code>. Both mobile terminals and their respective positions must be set in the constructor or may be accessed when the object is created.
+<br /><b>Example code</b>
+<blockquote class="sourcecode">
+<pre>
+...
+var updateOfHansi = new TraX.PositionUpdate();
+var updateOfSchorsch = new TraX.PositionUpdate();
+var results = new TraX.HLPM_Parameters('schorsch', 'hansi', updateOfHansi, updateOfSchorsch);
+results.firstMT = 'schorsch der zweite';
+results.secondMT = 'hansi der zweite';
+results.firstPositionUpdate = new TraX.PositionUpdate();
+results.secondPositionUpdate = new TraX.PositionUpdate();
+...
+</pre>
+</blockquote>
+
+
+<h2>TraX.Stub</h2>
+This class is a singleton and cannot be instantiated. It provides methods for serialization of JavaScript objects and deserialization of strings to JavaScript objects. Normally, this class if of no concern to the web developer.
+
+<a name="faq"></a>
+<h1>Frequently Asked Questions</h1>
+<ol>
+	<li>
+		<h4>What browsers are supported?</h4>
+		<p>
+			Currently, Mozilla-based browsers like Firefox 2.x, Microsoft Internet Explorer 5.x, Opera 9.x, Apple's Safari 3.x as well as recent versions of Konqueror are supported. On mobile devices, Opera Mobile (but not Opera Mini) as well as Minimo are supported. Support for Microsoft's Mobile Internet Explorer is worked on, but don't count on it - sorry.
+		</p>
+	</li>
+	<li>
+		<a name="request_key"></a>
+		<h4>Where do I get an API key?</h4>
+		<p>
+			Send an email to <a href="mailto:requestkey@aloqa.com">requestkey@aloqa.com</a> containing your contact info and a short description of your service.
+		</p>
+	</li>
+	<li>
+		<h4>What is the licence of the TraX Javascript Library?</h4>
+		<p>
+			The type of the license hasn't been determined yet.
+		</p>
+	</li>
+	<li>
+		<h4>Why am I seeing a periodical activity on Safari/Konqueror?</h4>
+		<p>
+			Hey, you're lucky, it runs on your KHTML-based browser! The activity you're seeing is due to limitations of these browsers. Actually, every time you see such activity, data is pulled from the server backend. In contrary, Firefox uses lazy HTTP streaming, also known as <a href="http://alex.dojotoolkit.org/?p=545" title="Low Latency Data for the Browser">Comet</a> which does not suffer from such usability issues. Internet Explorer also suffers from this, but thanks to the <a href="http://alex.dojotoolkit.org/?p=538" title="What else is buried down in the depth's of Google's amazing JavaScript?">geniuses at Google</a>, we managed to hide it from the user ;)
+		</p>
+	</li>
+	<li>
+		<h4>Still open questions, comments or feedback?</h4>
+		<p>
+			We're really happy to answer your questions or to get feedback from you. So send us an email (<a href="mailto:support@aloqa.com">support@aloqa.com</a>) and we'll reply as soon as possible.
+		</p>
+	</li>
+
+</ol>
+
+<hr />
+<a name="footnote1"></a><div class="footnote offtop">1) It may look like Microsoft's Internet Explorer, Apple's Safari and Konqueror are superior browsers, but they are not. The reason why there is no limitation on the number of coordinates is because there is no limitation on submitted data. This is because of an alternative, but less responsive way of submitting data to the TraX Server. The side-effect of this kind of transport is that callback functions like <code>TraX.LLPM.onPositionUpdated</code> are not executed when a position update actually occured in the server backend (like it's the case with Firefox, Netscape, Mozilla and Opera), but may suffer from a time lag of up to five seconds.</div>
+
+</div>
+<div id="nav">
+		<a href="http://www.aloqa.com/aloqa/firma_en.html">ALOQA</a>
+		<a href="http://www.aloqa.com/produkte/index_en.html">Products</a>
+		<a href="http://www.aloqa.com/partner/index_en.html">Partners</a>
+		<a href="http://www.aloqa.com/news/index_en.html">News</a>
+		<a href="index.html" class="aktiv">Developer</a>
+		<div id="subnav">
+			<a href="ajax_en.html" class="aktiv">Ajax API</a>
+			<a href="java/tutorial_en.html">Java API</a>
+			<a href="http://blog.aloqa.com">Blog</a>
+		</div>
+</div>
+
+</div>
+<script type="text/javascript" src="http://www.google-analytics.com/ga.js"></script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-2765708-5");
+pageTracker._initData();
+pageTracker._trackPageview();
+</script>
+</body>
+</html>

@@ -1,0 +1,685 @@
+<html>
+<head>
+<title>ALOQA TraX Java API Tutorial</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<script type="text/javascript" src="../js/jquery-latest.js"></script>
+<link rel="stylesheet" href="../css/jqTOC.css" type="text/css" />
+<script type="text/javascript" src="../_scripts/javascripts.js"></script>
+<link href="../_scripts/styles.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+  h1,h2,h3 { margin-top:2em; }
+</style>
+<link rel="shortcut icon" type="image/x-icon" href="http://aloqa.com/favicon.ico"/>
+
+</head>
+<body>
+<div id="superdiv">
+<div id="logolink"><a href="http://www.aloqa.com/index_en.html" title="ALOQA Home"><img src="../_images/nixx.gif" border="0" width="235" height="60"></a></div>
+
+<div id="content_api">
+	<div class="header">
+	ALOQA TraX Java API Tutorial
+</div>
+<br />
+<br />
+<br />
+<div style="width: 800px">
+<p>This tutorial covers the integration of the ALOQA TraX Java library in a Java MIDlet.</p>
+<p>The first part shows how to embed the library in your MIDlet project and how to initialize the TraX Client in order to access the location data of this device via any local or remote API,
+like the <a href="../ajax_en.html">AJAX API</a>. 
+The next section deals with the ALOQA TraX API itself and presents different request types. You can poll the position of a target or register for certain location-based events 
+like a target entering an area or two persons approaching each other. The full example is available for <a href="http://dev.aloqa.com/download/Aloqa_TraX_J2ME_Demo.zip">download</a>.
+In order to use the APIs, you need to <a href="#request_key">request an API key</a> for your application.
+</p>
+<p>
+We're looking forward to your feedback, so <a href="http://aloqa.mojohelpdesk.com/req">create a ticket</a> at our helpdesk or send us an email to <a href="mailto:support@aloqa.com">support@aloqa.com</a>.
+</p>
+
+<h1>Table of Contents</h1>
+<ul>
+<li><p><a href="#getting_started"><b>Getting Started</b></a></p></li>
+<li><p><a href="#init_trax"><b>Initialize the ALOQA TraX Client</b></a></p>
+<p><a href="#init_trax_client">TraXClient</a> | <a href="#init_trax_con_param">Connection Parameters</a> | <a href="#init_trax_con">Open Connection</a> | 
+<a href="#init_trax_status">Status Updates</a></p></li>
+<li><p><a href="#using_api"><b>Using the ALOQA TraX Java API</b></a></p>
+<p><a href="#using_api_setup">Setup</a> | <a href="#using_api_polling">Position Polling</a> | <a href="#using_api_llpm">Position Update Request</a> | <a href="#using_api_hlpm">Proximity Request</a> | 
+<a href="#using_api_knn">KNN-Request</a> | <a href="#using_api_push">Push Notification</a> | <a href="#using_api_log">Logging</a></p>
+</li>
+<li><p><a href="#faq"><b>Frequently Asked Questions</b></a></p></li>
+</ul>
+</div>
+
+<a name="getting_started"></a>
+<h1>Getting Started</h1>
+<p>
+During this tutorial we will create our own location-based Java MIDlet using the ALOQA TraX services. Therefore we're going to install and setup the required software and development environment
+in this section. Afterwards we'll add the ALOQA TraX Java library to our project and embed the Javadoc-based documentation into our development platform.
+</p>
+<h2>Setting the stage</h2>
+<p>
+In order to conveniently develop the MIDlet we need the following tools:
+<ul>
+<li><b><a href="http://java.sun.com/javase/downloads/index.jsp" target="_blank">Java SE Development Kit JDK (5 or higher)</a></b></li>
+<li><b><a href="http://java.sun.com/products/sjwtoolkit/download.html" target="_blank">Sun Wireless Toolkit (WTK)</a></b>
+<li><b><a href="http://www.eclipse.org/downloads/" target="_blank">Eclipse IDE for Java Developers</a></b></li>
+<li><b><a href="http://eclipseme.org/" target="_blank">EclipseME Plug-In</a></b></li>
+</ul>
+</p>
+<p>
+Of course, you can use other tools than listed above. The next two sections will explain the steps of integrating the library and documentation according to this setup.
+</p>
+<h2>Add TraX Library to Project</h2>
+<p>
+If you do not already have an existing J2ME project, we create a new one. Select the menu item <i>File</i> -> <i>New</i> -> <i>Project...</i> In the wizard choose <i>J2ME Midlet Suite</i>
+ (in folder <i>J2ME</i>). On the next page enter a name for the project and click through the wizard.<br />
+Then a right click on the project opens a contextual menu, where you have to select <i>Properties</i>. On the left side of the window go to <i>Java Build Path</i> and choose the <i>Libraries</i> tab. Click on the 
+Button <i>Add External JARs...</i> and select the location you unpacked the <a href="http://dev.aloqa.com/index.html#downloads" target="_blank">ALOQA TraX Java API for J2ME</a> package.
+</p>
+<p>
+Afterwards go to the next tab called <i>Order and Export</i> and check the box before <i>ALOQA_TraX_J2ME_API.jar</i> to export the library to the final midlet file. Otherwise the library would be missing
+on the mobile device.
+</p>
+<h2>Add Javadoc to Eclipse</h2>
+<p>
+Now expand the project folder in Eclipse and you should see a folder called <i>Referenced Libraries</i> containing the ALOQA TraX library. Again a right click on the library opens a contextual menu, 
+where you have to select <i>Properties</i>. On the left side of the window go to <i>Javadoc Location</i> and enter the following url as <i>Javadoc location path</i>:<br />
+<b>http://dev.aloqa.com/javadoc</b> <br />
+Then close the window by pressing <i>OK</i>. Now the Javadoc-based documention is integrated in Eclipse and you can access it while writing code.
+</p>
+
+<a name="init_trax"></a>
+<h1>Initialize the ALOQA TraX Client</h1>
+<p>
+In this section we will setup the TraX Client and open a connection to the ALOQA TraX Servers.
+</p>
+
+<a name="init_trax_client"></a>
+<h2>Creating the TraX Client</h2>
+<p>
+Now we create a new instance of TraXClient. The TraXClient will automatically start the positioning procedure. For that purpose it uses the built-in Location API.
+</p>
+<blockquote class="sourcecode">
+<pre>
+TraXClient tc = new TraXClient("appID", "username");</pre>
+</blockquote>
+<p>
+<i>"AppID"</i> stands for your application key. You must provide a valid key, in order to be able to connect to the TraX Servers. So just <a href="#request_key">request an API key</a> for your application
+or you can use <i>"aloqatest"</i> during development. In case of <i>"aloqatest"</i> be aware, that anyone gets access to your position data since this is a public account.
+</p>
+<p>
+<i>"username"</i> must be replaced with the name of the target. Therefore you should ask the user of your application for a username. Of course you can pass the same user name utilized in your service
+ to the TraX Client. Note: The user names only have to be unique within your application key.
+</p>
+<p>
+In case we want to access an external gps receiver being connected to the mobile phone via Bluetooth, we must add another position provider to the constructor. For NMEA based Bluetooth gps receivcer
+we can use the built-in BluetoothNMEAFactory:
+</p>
+<blockquote class="sourcecode">
+<pre>
+TraXClient tc = new TraXClient("appID", "username", new BluetoothNMEAFactory());</pre>
+</blockquote>
+<p>
+If we want to use simulated position data for development purpose, we can either configure the emulator to do so or tell TraXClient to simulate position data according to a certain movement pattern. 
+For the built-in Random Waypoints change the line above to this one:
+</p>
+<blockquote class="sourcecode">
+<pre>
+TraXClient tc = new TraXClient("appID", "username", 
+                     new RandomWaypointFactory(40,41,10,11,300000,1000,2000,20000));</pre>
+</blockquote>
+<p>
+For more details on the parameters of Random Waypoints or how to create your own movement patttern see the <a href="http://dev.aloqa.com/java_en.html">Class Reference</a> of RandomWaypointFactory
+ as well as PositionProvider and PositionProviderFactory.
+</p>
+
+<a name="init_trax_con_param"></a>
+<h2>Setting Connection Parameters</h2>
+<p>
+The connection parameters consist right now of only the password for your application key. Therefore the password is identical for all targets and the user should not be asked for.
+</p>
+<blockquote class="sourcecode">
+<pre>
+ConnectionParameters con = new ConnectionParameters("password");</pre>
+</blockquote>
+<p>
+Note: If "aloqatest" is used as application key, the password will not be checked.
+</p>
+
+<a name="init_trax_con"></a>
+<h2>Open a Connection</h2>
+<p>
+Now we open the connection to the ALOQA TraX Servers.
+</p>
+<blockquote class="sourcecode">
+<pre>
+tc.getConnection_SAP_Target().startConnecting(con, Connection_SAP_Target.POLICY_NEW_THREAD_FOR_EACH_EVENT);</pre>
+</blockquote>
+<p>
+By default it is recommended to use the "new-thread-policy". This means, that for each update a new thread is created. This policy is the least efficient, but most robust of all. The only problem is,
+that if you receive a lot of updates at the same time, you could get an OutOfMemoryExceptions depending on the size of the virtual machine on the mobile device. Therefore we provide also a policy,
+which uses the same thread for each update (<i>POLICY_SINGLE_THREAD</i>). It is very efficient, but can create a deadlock depending on the calls made by your application within the update thread.
+A compromise between efficiency and usability is the thread pool policy (<i>POLICY_SIMPLE_THREAD_POOL</i>), where the number of threads is limited. For more information and examples see the 
+<a href="http://dev.aloqa.com/java_en.html">Class Reference</a> of Connection_SAP_Target.
+</p>
+<p>
+As from now the position data of the target and associated events can be accessed via the different APIs, like the <a href="../ajax_en.html">AJAX API</a>. The next chapter describes the local API, which
+lets us sending requests to other targets from within the MIDlet. Before, we have a look at the status of the TraX Client.
+</p>
+
+<a name="init_trax_status"></a>
+<h2>Receiving Status Updates from the TraX Client</h2>
+<p>
+Often you want to visualize the state of your application to the user. In case of the TraX Client, it could be waiting for a position fix (e.g. using GPS) or being connected or diconnected. Therefore
+we have to implement the <i>TraXStatusListener</i> interface.
+</p>
+<blockquote class="sourcecode">
+<pre>
+public class LocationMIDlet extends MIDlet implements CommandListener, TraXStatusListener { ... }</pre>
+</blockquote>
+<p>
+The interface consists of one method, named <i>traXStatusChanged(TraXStatus newStatus)</i>, which is executed each time the status changes. So we implement this method and check for two properties.
+</p>
+<blockquote class="sourcecode">
+<pre>
+public void traXStatusChanged(TraXStatus newStatus) {
+   // Check for connection
+   if (newStatus.isConnected()) { ... }
+   // Check for position fix
+   if (newStatus.isPositionAvailable()) { ... }
+}</pre>
+</blockquote>
+<p>
+Then we register the current class for status updates after initializing the TraXClient instance.
+</p>
+<blockquote class="sourcecode">
+<pre>
+TraXClient tc = new TraXClient("appID", "username");
+tc.setStatusListener(this);</pre>
+</blockquote>
+
+<a name="using_trax"></a>
+<h1>Using the ALOQA TraX Java API</h1>
+<p>
+In this section we will configure our class for the Java API as well as send requests and receive updates from the Java API.
+</p>
+
+<a name="using_api_setup"></a>
+<h2>Java API Setup</h2>
+<p>
+First of all we have to add another interface (<i>App_SAP_TraXAPI</i>) to our class.
+</p>
+<blockquote class="sourcecode">
+<pre>
+public class LocationMIDlet extends MIDlet implements CommandListener, TraXStatusListener, App_SAP_TraXAPI { ... }</pre>
+</blockquote>
+<p>
+Now we have to implement the update method of <i>App_SAP_TraXAPI</i>, which is called by the TraX Client on each detected event.
+</p>
+<blockquote class="sourcecode">
+<pre>
+public void update(String jobId, AsynchronousResponse res) { ... }</pre>
+</blockquote>
+<p>
+We will look at this function in more detail later in this tutorial and focus now on sending requests to the TraX Client.
+</p>
+<p>
+Therefore we need a reference to the TraX Java API.
+</p>
+<blockquote class="sourcecode">
+<pre>
+TraXAPI_SAP_App api = tc.getTraXAPI_SAP_App();</pre>
+</blockquote>
+<p>
+Then we need a valid handle to access the API functions.
+</p>
+<blockquote class="sourcecode">
+<pre>
+TraXHandle handle = tc.getHandleManager().createHandle();</pre>
+</blockquote>
+<p>
+Finally, we set this class as the receiver of asynchronous (spatial) events. These events will be sent to the update method, we implemented before.
+</p>
+<blockquote class="sourcecode">
+<pre>
+handle.setApp(this);</pre>
+</blockquote>
+
+<a name="using_api_polling"></a>
+<h2>Position Polling</h2>
+<p>
+For initializing the application we may want a current snapshot of our friends' position. Therefore we use the synchronous PollingRequest
+</p>
+<blockquote class="sourcecode">
+<pre>
+String[] friends = new String[] { "dummy", "mygirlfriend", "Fred",
+      "Fritz", "Freud", "Anna", "Hanna", "Nanna" };
+PollingRequest pr = new PollingRequest(friends);</pre>
+</blockquote>
+<p>
+Let TraX poll all of our friends in parallel and then cast the response to a PollingResponse.
+</p>
+<blockquote class="sourcecode">
+<pre>
+PollingResponse response = (PollingResponse) api.synchRequest(handle.getId(), pr);</pre>
+</blockquote>
+<p>
+Now we can read out all of the positions of our friends.
+</p>
+<blockquote class="sourcecode">
+<pre>
+PositionUpdate[] pus = response.getPositionUpdates();
+for (int i = 0; i < pus.length; i++) {
+   if (pus[i].isValid()) {
+      System.out.println(friends[i] + " has position: " + pus[i].getPosition());
+   }
+}</pre>
+</blockquote>
+<p>
+Note that for the synchronous pollings to work, the TraXClient needs to be connected. Otherwise a RejectedAPICallException is thrown.
+</p>
+
+<a name="using_api_llpm"></a>
+<h2>Creating Position Update Requests</h2>
+<p>
+Let's create several Position Update Requests to track the user "dummy": one is based on a distance-based tracking, one on periodic tracking and one on zone-based tracking.
+Note that, in order to receive updates so-called Position Update Responses, user "dummy" needs to be connected to the Aloqa server as well.
+</p>
+
+<h3>Creating a Distance Job</h3>
+<p>
+The Distance Job will generate a Position Update Response each time the target moves by 100m. 
+</p>
+<blockquote class="sourcecode">
+<pre>
+DistanceJob dj = new DistanceJob();
+dj.setDistance(100);</pre>
+</blockquote>
+<p>
+Then we create a new Position Update Request. It has the id "distance", upon which the job can be identified later. Also we pass the handle, the target to be tracked ("dummy") and the DistanceJob to it.
+</p>
+<blockquote class="sourcecode">
+<pre>
+DistanceBasedPositionUpdateRequest req1 = new DistanceBasedPositionUpdateRequest("distance", 
+	handle.getId(), "dummy", dj);</pre>
+</blockquote>
+<p>
+Finally, we sent the request to TraX.
+</p>
+<blockquote class="sourcecode">
+<pre>
+api.addObservation(req1);</pre>
+</blockquote>
+
+<h3>Creating a Periodic Job</h3>
+<p>
+The PeriodicJob will generate a Position Update Response of "dummy" every 100 seconds. It has the id "time", upon which it can be identified later. 
+</p>
+<blockquote class="sourcecode">
+<pre>
+PeriodicJob pj = new PeriodicJob();
+pj.setMillis(100000);
+PeriodicPositionUpdateRequest req2 = new PeriodicPositionUpdateRequest("time", 
+	handle.getId(), "dummy", pj);
+api.addObservation(req2);</pre>
+</blockquote>
+
+<h3>Creating a Zone Job</h3>
+<p>
+The ZoneJob will generate a Position Update Response each time "dummy" enters or leaves a certain zone. 
+</p>
+<blockquote class="sourcecode">
+<pre>
+ZoneJob zj = new ZoneJob();
+
+// be notified when "dummy" enters or leaves the zone.
+zj.setMode(ZoneJob.MODE_ENTER_LEAVE);
+
+// we want to receive more than one position update
+zj.setTriggerPolicy(ZoneJob.TRIGGER_POLICY_MULTIPLE_PUs);</pre>
+</blockquote>
+<p>
+Other options include only reporting on entering (<i>MODE_ENTER</i>) or on leaving (<i>MODE_LEAVE</i>) the zone as well as only reporting once and then deleting the job (<i>TRIGGER_POLICY_SINGLE_PU</i>).
+</p>
+<p>
+After initializing the ZoneJob we have to define a ZoneTrigger, in this example a CircularZoneTrigger.
+</p>
+<blockquote class="sourcecode">
+<pre>
+// The center of the desired zone
+Coord center = new Coord(48.11, 11.2, 0);
+
+// we want an alarm when "dummy" comes closer than 100 m to this spot.
+int innerRadius = 100;
+
+// you want an alarm again when "dummy" departs by more than 250 m from this spot.
+int outerRadius = 250;
+
+// create the Zone Trigger
+ZoneTrigger ca = new CircularZoneTrigger(center, innerRadius, outerRadius);
+
+// Set it to the ZoneJob
+zj.setZoneTrigger(ca);</pre>
+</blockquote>
+<p>
+Finally, we create the Zone based Position Update Request with id "zone" and send the request to TraX.
+</p>
+<blockquote class="sourcecode">
+<pre>
+ZoneBasedPositionUpdateRequest req3 = new ZoneBasedPositionUpdateRequest("zone", 
+	handle.getId(), "dummy", zj);
+api.addObservation(req3);</pre>
+</blockquote>
+
+<h2>Receiving a Position Update Response</h2>
+<p>
+After sending out requests we want to receive updates reported by these requests. Therefore we need to extend the update method.
+</p>
+<blockquote class="sourcecode">
+<pre>
+public void update(String jobId, AsynchronousResponse res) {
+   if (jobId.equals("distance") || jobId.equals("time") || jobId.equals("zone")) {
+      // as we know the job id, we can cast it to a PositionUpdateResponse
+      PositionUpdateResponse lr = (PositionUpdateResponse) res;
+      System.out.println("dummy has new position: " + lr.getPositionUpdate().getPosition());
+   }
+}</pre>
+</blockquote>
+<p>
+Every update caused by a request will result in a callback of the update method. The String jobId contains the id of the associated job. According to the job id we cast the <i>AsynchronousResponse</i>
+ to the adequate type. The code example above receives all updates by the created DistanceJob, PeriodicJob and ZoneJob and prints it to the standard output.
+Since this method handles all updates, we will expand it in the next sections for other types of requests.
+</p>
+
+<a name="using_api_hlpm"></a>
+<h2>Creating Proximity Requests</h2>
+<p>
+Now we create a Proximity Request to detect proximity or seperation of two mobile targets: Let's say we want to be notified whenever "dummy" comes close to us.
+Note that, in order to receive updates so-called Proximity Responses, user "dummy" needs to be connected to the Aloqa server as well.
+</p>
+<blockquote class="sourcecode">
+<pre>
+int proximityDistance = 1000;
+int separationDistance = 2000;
+int borderlineTolerance = 500;
+
+// Create this particular observation for dummy and ourself.
+ProximityObservation po1 = new ProximityObservation("dummy", "username", 
+	proximityDistance, separationDistance, borderlineTolerance);</pre>
+</blockquote>
+<p>
+We want to get a notification when "dummy" is closer than 1000 m and again when he departs by more than 2000 m. In order to allow an efficient tracking we set the borderline tolerance to 500 m.
+For more details see the <a href="http://dev.aloqa.com/java_en.html">Class Reference</a> of ProximityObservation. "username" must be replaced with the user name specified during the initialization of the 
+<a href="#init_trax">TraX Client</a>.
+</p>
+<p>
+Of course, we can create an observation request, where we do not participate in.
+<blockquote class="sourcecode">
+<pre>
+ProximityObservation po2 = new ProximityObservation("dummy", "mygirlfriend",
+      proximityDistance, separationDistance, borderlineTolerance);</pre>
+</blockquote>
+<p>
+Like in the case of a Position Update Request, we create a Proximity Request by specifing the id of the request ("proximity") and add the two observation requests to it. Afterwards we send it to TraX.
+<blockquote class="sourcecode">
+<pre>
+ProximityRequest req4 = new ProximityRequest("proximity", handle.getId(),
+      new ProximityObservation[] { po1, po2 });
+api.addObservation(req4);</pre>
+</blockquote>
+
+<h2>Receiving a Proximity Response</h2>
+<p>
+After sending out the Proximity Request we want to receive the corresponding updates. Therefore we need to extend the update method.
+</p>
+<blockquote class="sourcecode">
+<pre>
+public void update(String jobId, AsynchronousResponse res) {
+   if (jobId.equals("proximity")) {
+      // as we know the job id, we can cast it to a ProximityResponse
+      ProximityResponse pr = (ProximityResponse) res;
+	
+      // One Proximity Response may carry events for several user pairs
+      ProximityObserved[] pos = pr.getResponses();
+      for (int i = 0; i < pos.length; i++) {
+         if (pos[i].getEvent() == ProximityObserved.PROXIMITY_EVENT)
+            System.out.println(pos[i].getMT1() + " is close to " + pos[i].getMT2() + ", dist=" 
+               + pos[i].getDistance() + "m ");
+
+         else if (pos[i].getEvent() == ProximityObserved.SEPARATION_EVENT)
+            System.out.println(pos[i].getMT1() + " is far from " + pos[i].getMT2() + ", dist=" 
+               + pos[i].getDistance() + "m ");
+      }
+   }
+}</pre>
+</blockquote>
+
+<a name="using_api_knn"></a>
+<h2>Creating KNNRequests</h2>
+<p>
+Now we create a KNNRequest to detect the k-nearest neighbors. Since we have more friends than "dummy", we look at the following scenario:<br />
+We want to stay up-to-date about their closeness all the time by using a KNNRequest, which always notifies us when the distance-sorted list of our k nearest friends changes.
+Note that, in order to receive updates so-called HLPMResponses, all "friends" need to be connected to the Aloqa server as well.
+</p>
+<blockquote class="sourcecode">
+<pre>
+String[] friends = new String[] { "dummy", "mygirlfriend", "Fred",
+      "Fritz", "Freud", "Anna", "Hanna", "Nanna" };
+int k = 8;
+int knnBorderlineTolerance = 500;
+// we want OUR k nearest friends.
+KNNRequest req5 = new KNNRequest("knn", handle.getId(), "username", friends, k, knnBorderlineTolerance);
+api.addObservation(req5);</pre>
+</blockquote>
+<p>
+First we have to choose how big k is (note that we will be notified only about the k closest friends). In this case we want all of them. Like the HLPMObservation
+we have to specify the borderline tolerance. For more details on that see the <a href="http://dev.aloqa.com/java_en.html">Class Reference</a> of KNNRequest. 
+Ther "username" must be replaced with the user name specified during the initialization of the <a href="#init_trax">TraX Client</a>, in order to track our friends with respect to our position.
+</p>
+
+<h2>Receiving a KNNResponse</h2>
+<p>
+After sending out the KNNRequest we want to receive the corresponding updates. Therefore we need - once again - to extend the update method.
+</p>
+<blockquote class="sourcecode">
+<pre>
+public void update(String jobId, AsynchronousResponse res) {
+   if (jobId.equals("knn")) {
+      // as we know the job id, we can cast it to an KNNResponse
+      KNNResponse kr = (KNNResponse) res;
+
+      System.out.println("new list of closest friends: ");
+      for (int i = 0; i < kr.getMTs().length; i++)
+         System.out.println(kr.getMTs()[i] + ": " + kr.getLastMeasuredDistances()[i] + "m .");
+   }
+}</pre>
+</blockquote>
+
+<a name="using_api_push"></a>
+<h2>Push Notification</h2>
+<p>
+In our application, e.g. an instant messenger, we want to sent a message to another client, which is not related to any change of a position. A naive way would be to send the message to a central server
+and make all clients periodically request updates from the messaging server. This leads to unnecessary data traffic, a delayed delivery to the client and load on the server.
+</p>
+<p>
+Aloqa TraX provides a push notification, an easy and efficient way to sent messages directly to other clients. So you do not need to setup an additional server, you can simply use the Aloqa TraX framework.
+Even if your application is not location-based you can use TraX for pushing data to mobile devices. Also, if you need or already own a server-based solution, it is also possible to send messages from the
+server to mobile devices via our various APIs.
+</p>
+<p>
+In order to make this feature work in our demo application, we must implement a sending part and functions for receiving messages. Let's start with sending a notification.
+</p>
+
+<h3>Sending a Push Notification</h3>
+<p>
+For sending a message to another client we use the synchronous NotificationRequest.
+</p>
+<blockquote class="sourcecode">
+<pre>
+String[] friends = new String[] { "dummy", "mygirlfriend", "Fred",
+      "Fritz", "Freud", "Anna", "Hanna", "Nanna" };
+SingleTargetNotificationRequest stnr = new SingleTargetNotificationRequest("Hi friends!".getBytes()); 
+NotificationRequest nr = new NotificationRequest(friends, stnr, NotificationRequest.DO_ACK);</pre>
+</blockquote>
+<p>
+First of all we create a SingleTargetNotificationRequest containing the message to be sent as a byte array. Then we add the receivers of the message (our friends) and the created 
+SingleTargetNotificationRequest to a new NotificationRequest. Also we have to specify, whether we want to be informed about the successful delivery and a response from the receiver 
+(<i>NotificationRequest.DO_ACK</i>). Otherwise we would use <i>NotificationRequest.NO_ACK</i>.
+</p>
+<p>
+Note: In principle you can send any volume of data via this channel. In order to not congest the channel we recommend to send only small amounts of data and use this channel as a trigger mechanismen.
+So in case you want to push large images or video files, you should store them on a central server and only sent an URL to the file via the push notification. Thus the client is immediately informed, 
+can download the files via another connection and the push channel for this device is free for new notifications. Also the end user does not notice this technical trick and the client is receiving 
+other notifications in the meantime.
+</p>
+
+<p>
+Let TraX send our message to all of our friends in parallel and then cast the response to a NotificationResponse.
+</p>
+<blockquote class="sourcecode">
+<pre>
+NotificationResponse nResponse = (NotificationResponse) api.synchRequest(handle.getId(), nr);</pre>
+</blockquote>
+<p>
+Since we requested an acknowledgement from the receivers (<i>NotificationRequest.DO_ACK</i>), we can read out all the responses.
+</p>
+<blockquote class="sourcecode">
+<pre>
+SingleTargetNotificationResponse[] stnrs = nResponse.getResponses();
+for (int i = 0; i < stnrs.length; i++) {
+	System.out.println("DeliveryStatus: " + stnrs[i].getDeliveryStatus()
+		+ " Response: " + new String(stnrs[i].getResponseMessage()));
+}</pre>
+</blockquote>
+<p>
+Note that for the push notification to work, the TraXClient needs to be connected. Otherwise a RejectedAPICallException is thrown.
+</p>
+
+<h3>Receiving Push Notifications</h3>
+<p>
+After sending a push notification, we want to handle incoming notifications. Therefore
+we have to implement an additional interface, the so-called <i>App_SAP_App</i> interface. The name App_SAP_App illustrates, that this interface or Service Access Point (SAP) is between 
+the Application layers of two clients.
+</p>
+<blockquote class="sourcecode">
+<pre>
+public class LocationMIDlet extends MIDlet implements CommandListener, TraXStatusListener,
+	App_SAP_TraXAPI, App_SAP_App{ ... }</pre>
+</blockquote>
+<p>
+The interface consists of two methods, named <i>handlePushMessageDoAck(byte[] arg0)</i> and <i>handlePushMessageNoAck(byte[] arg0)</i>. One of them is called every time a push notification arrives at the
+client depending on the acknowledgement type of NotificationRequest (<i>NotificationRequest.DO_ACK</i> or <i>NotificationRequest.NO_ACK</i>).
+</p>
+<blockquote class="sourcecode">
+<pre>
+public byte[] handlePushMessageDoAck(byte[] arg0) {
+	System.out.println("Got Message:" + new String(arg0) + ", sending Greetings back");
+	return "Greetings".getBytes();
+}</pre>
+</blockquote>
+<p>
+Note: Do not implement any blocking code (I/O or GUI) within this function, otherwise no additional push notifications can be received. Therefore the response should be sent immediately. If you are 
+implementing an instant messenger for example, you should use another push notification to transmit the response of the user.
+</p>
+<blockquote class="sourcecode">
+<pre>
+public void handlePushMessageNoAck(byte[] arg0) {
+	System.out.println("Got Message:" + new String(arg0));
+}</pre>
+</blockquote>
+<p>
+At last we register the current class for receiving push notifications after initializing the TraXClient instance.
+</p>
+<blockquote class="sourcecode">
+<pre>
+tc.setApp_SAP_App(this);</pre>
+</blockquote>
+
+
+
+<a name="using_api_log"></a>
+<h2>Logging</h2>
+<p>
+For debugging the TraX Java API provides a logging interface for getting detailed log information of the TraX Client. In order to access this information we have to implement a new interface
+called <i>LogListener</i>.
+</p>
+<blockquote class="sourcecode">
+<pre>
+public class LocationMIDlet extends MIDlet implements CommandListener, TraXStatusListener, LogListener { ... }</pre>
+</blockquote>
+<p>
+The interface consists of two methods, named <i>newLogMessage(String msg)</i> and <i>newLogMessage(String msg, Throwable t)</i>, which are called when a new log message is created. 
+So we implement these methods.
+</p>
+<blockquote class="sourcecode">
+<pre>
+public void newLogMessage(String msg) {
+   System.out.println(msg);
+}
+
+public void newLogMessage(String msg, Throwable t) {
+   System.out.println(msg + ":" + t);
+}</pre>
+</blockquote>
+<p>
+As last step we set the desired log level and register this class as a listener for log messages.
+</p>
+<blockquote class="sourcecode">
+<pre>
+TraXLog.setLoglevel(TraXLog.LOG_LEVEL_INFO);
+TraXLog.setLogListener(this);</pre>
+</blockquote>
+<p>
+For more details on the log level see the <a href="http://dev.aloqa.com/java_en.html">Class Reference</a> of TraXLog.
+</p>
+
+
+<a name="faq"></a>
+<h1>Frequently Asked Questions</h1>
+<ol>
+	<li>
+		<a name="request_key"></a>
+		<h4>Where do I get an API key?</h4>
+		<p>
+			Send an email to <a href="mailto:requestkey@aloqa.com">requestkey@aloqa.com</a> containing your contact info and a short description of your service.
+		</p>
+	</li>
+	<li>
+		<a name="request_key"></a>
+		<h4>Cannot connect to the Aloqa Server</h4>
+		<p>
+			Please check any firewall rules, whether the client can establish a connection to the ports 31001 and 31002. 
+		</p>
+	</li>
+	<li>
+		<h4>Still open questions, comments or feedback?</h4>
+		<p>
+			We're really happy to answer your questions or to get feedback from you. So send us an email (<a href="mailto:support@aloqa.com">support@aloqa.com</a>) 
+			and we'll reply as soon as possible.
+		</p>
+	</li>
+
+</ol>
+
+</div>
+<div id="nav">
+		<a href="http://www.aloqa.com/aloqa/firma_en.html">ALOQA</a>
+		<a href="http://www.aloqa.com/produkte/index_en.html">Products</a>
+		<a href="http://www.aloqa.com/partner/index_en.html">Partners</a>
+		<a href="http://www.aloqa.com/news/index_en.html">News</a>
+		<a href="../index.html" class="aktiv">Developer</a>
+		<div id="subnav">
+			<a href="../ajax_en.html">Ajax API</a>
+			<a href="tutorial_en.html" class="aktiv">Java API</a>
+			<a href="http://blog.aloqa.com">Blog</a>
+		</div>
+</div>
+
+</div>
+<script type="text/javascript" src="http://www.google-analytics.com/ga.js"></script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-2765708-5");
+pageTracker._initData();
+pageTracker._trackPageview();
+</script>
+</body>
+</html>

@@ -1,0 +1,280 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+
+
+
+
+
+
+
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>HTTP Builder - News</title>
+    <style type="text/css" media="all">
+      @import url("./css/maven-base.css");
+      @import url("./css/maven-theme.css");
+      @import url("./css/site.css");
+    </style>
+    <link rel="stylesheet" href="./css/print.css" type="text/css" media="print" />
+        <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+      </head>
+  <body class="composite">
+    <div id="banner">
+                  <a href="index.html" id="bannerLeft">
+    
+                                            <img src="images/logo.png" alt="" />
+    
+            </a>
+                        <a href="../../" id="bannerRight">
+    
+                                    <img src="http://media.xircles.codehaus.org/_projects/groovy/_logos/medium.png" alt="" />
+    
+            </a>
+            <div class="clear">
+        <hr/>
+      </div>
+    </div>
+    <div id="breadcrumbs">
+          
+  
+
+  
+    
+            
+  
+    
+            <div class="xleft">
+        Version: 0.5.0-RC1
+              </div>
+            <div class="xright">      
+  
+
+  
+    
+            
+  
+    
+             Last Published: 2009-06-16
+            </div>
+      <div class="clear">
+        <hr/>
+      </div>
+    </div>
+    <div id="leftColumn">
+      <div id="navcolumn">
+           
+  
+
+  
+    
+            
+  
+    
+                   <h5>Overview</h5>
+            <ul>
+              
+    <li class="none">
+                    <a href="home.html">Home</a>
+          </li>
+              
+    <li class="none">
+              <strong>News</strong>
+        </li>
+              
+    <li class="none">
+                    <a href="download.html">Download</a>
+          </li>
+              
+                
+              
+      
+            
+      
+            
+      
+            
+      
+            
+      
+            
+      
+            
+      
+            
+      
+            
+      
+              
+        <li class="collapsed">
+                    <a href="doc/index.html">Documentation</a>
+                </li>
+              
+    <li class="none">
+                    <a href="apidocs/index.html">JavaDoc</a>
+          </li>
+              
+    <li class="none">
+                    <a href="changes.html">Changelog</a>
+          </li>
+              
+    <li class="none">
+                    <a href="http://twitter.com/httpbuilder" class="externalLink">Twitter!</a>
+          </li>
+              
+    <li class="none">
+                    <a href="home.html#Support">Support</a>
+          </li>
+              
+    <li class="none">
+                    <a href="about.html">About</a>
+          </li>
+          </ul>
+              <h5>Additional Reference</h5>
+            <ul>
+              
+    <li class="none">
+                    <a href="../../Documentation">Groovy</a>
+          </li>
+              
+    <li class="none">
+                    <a href="http://hc.apache.org/httpcomponents-client/" class="externalLink">HttpClient</a>
+          </li>
+              
+    <li class="none">
+                    <a href="http://hc.apache.org/httpcomponents-core/" class="externalLink">HttpCore</a>
+          </li>
+              
+    <li class="none">
+                    <a href="http://json-lib.sourceforge.net/" class="externalLink">JSON-Lib</a>
+          </li>
+              
+    <li class="none">
+                    <a href="http://nekohtml.sourceforge.net/" class="externalLink">NekoHTML</a>
+          </li>
+          </ul>
+              <h5>Project Documentation</h5>
+            <ul>
+              
+                
+              
+      
+            
+      
+            
+      
+            
+      
+            
+      
+            
+      
+            
+      
+            
+      
+            
+      
+            
+      
+              
+        <li class="collapsed">
+                    <a href="project-info.html">Project Information</a>
+                </li>
+              
+                
+              
+      
+            
+      
+            
+      
+            
+      
+            
+      
+            
+      
+              
+        <li class="collapsed">
+                    <a href="project-reports.html">Project Reports</a>
+                </li>
+          </ul>
+                                           <a href="http://maven.apache.org/" title="Built by Maven" class="poweredBy">
+            <img alt="Built by Maven" src="./images/logos/maven-feather.png"></img>
+          </a>
+                       
+  
+
+  
+    
+            
+  
+    
+        </div>
+    </div>
+    <div id="bodyColumn">
+      <div id="contentBox">
+        <p><i>New to HTTPBuilder? See the <a href="home.html">Overview</a> page.</i> </p>
+<div class="section"><h2>News</h2>
+<p>You can also follow project updates on <a href="http://twitter.com/httpbuilder" class="externalLink">Twitter</a></p>
+<div class="section"><h3>16 June 2009 - 0.5.0 RC1!</h3>
+<p>RC1 is released! Go <a href="download.html">download it</a>!</p>
+<p>Keep in mind there are a few breaking changes from 0.4.1. See the <a href="http://jira.codehaus.org/browse/GMOD/fixforversion/15065" class="externalLink">JIRA report</a> for a full list of changes. Some breaking changes include:</p>
+<ol type="1"><li>New Maven group - <tt>org.codehaus.groovy.modules.http-builder</tt></li>
+<li>HTTPBuilder.(get|post) named arguments - <tt>params</tt> is now <tt>query</tt></li>
+<li>The HTTPBuilder class' <tt>URL</tt> property has been renamed to <tt>uri</tt> </li>
+</ol>
+<p>Of course the 0.5.0 release has a ton of more <i>interesting</i> changes; read below for most of them...</p>
+</div>
+<div class="section"><h3>13 June 2009 - Release Candidate (almost...)</h3>
+<p>I was just about to release version 0.5.0-RC1 and announce it on the mailing list, when suddenly my unit tests started failing! <tt>HTTP response code: 503 - http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd</tt> ... What? Turns out, I got bit by the <a href="http://www.w3.org/blog/systeam/2008/02/08/w3c_s_excessive_dtd_traffic" class="externalLink"> W3C trying frantically to conserve their bandwidth</a>.</p>
+<p>So realizing this is something that should really be built in, I added the capability via Apache's <a href="http://xml.apache.org/commons/components/resolver/" class="externalLink"> XML Resolver</a>. All HTML4 and XHTML DTDs are now cached in a <a href="http://fisheye.codehaus.org/browse/gmod/httpbuilder/trunk/src/main/resources/catalog/html.xml?r=root:" class="externalLink"> default catalog</a>, so parsing any sites that reference those DTDs should see a significant performance improvement now.</p>
+</div>
+<div class="section"><h3>29 May 2009</h3>
+<p>The 0.5.0 release is almost feature complete; see <a href="http://jira.codehaus.org/browse/GMOD/fixforversion/15065" class="externalLink">JIRA</a> for a list of issues that have been gone into this version. One of the major changes in today's snaphot release is deprecation of the 'params' named parameter. </p>
+<p>For HTTPBuilder operations that take name parameters, <tt>params</tt> has been replaced by <tt>query</tt> to set URL query parameters. This is to more clearly differentiate between URL and form POST parameters, and to avoid possible collision with future convenience methods for Apache HttpClient 'params' configuration.</p>
+<p>Please test out the latest snapshot; if I don't hear any bug reports in a week or two, I'll release v0.5.0.</p>
+</div>
+<div class="section"><h3>27 Apr 2009</h3>
+<p><b>Note to Maven users:</b> The project's group ID has changed to conform with the standard for Groovy projects hosted on Codehaus. The new group ID is <b>org.codehaus.groovy.modules.http-builder</b>. </p>
+<p>The 0.5 release is still pending, but I have an exciting new feature - <b>HttpURLClient</b>. This may seem redundant, since its features are almost identical to HTTPBuilder and RESTClient. The kicker though is that this class works with Google App Engine! </p>
+<p>GAE's Java sandbox doesn't allow socket usage, which totally kills Apache HttpClient (and hence, HB). This class uses HttpURLConnection for all I/O, enabling most of the conveniences of HTTPBuilder within GAE. Try it out in the latest HTTPBuilder snapshot.</p>
+</div>
+<div class="section"><h3>30 Mar 2009</h3>
+<p>Documentation is in the process of being overhauled to provide more comprehensive API examples. I've published a version that is still in progress, but certainly better than the single document that I had previously. </p>
+</div>
+<div class="section"><h3>11 Mar 2009</h3>
+<p>The latest 0.5 version now includes a new RESTClient class for even easier REST-style operations without a user-defined closure! See <a href="http://fisheye.codehaus.org/browse/gmod/httpbuilder/trunk/src/main/script/twitter_restbuilder.groovy?r=root:" class="externalLink"> the Twitter example</a>, and the updated <a href="apidocs/groovyx/net/http/RESTClient.html">JavaDoc</a>.</p>
+</div>
+<div class="section"><h3>04 Mar 2009</h3>
+<p>Now you can follow us on <a href="http://twitter.com/httpbuilder" class="externalLink">Twitter!</a> HTTPBuilder now 'tweets' its releases as an automated part of the build process. This is a neat proof-of-concept that could easily be added to any Maven build thanks to <a href="http://groovy.codehaus.org/GMaven+-+Executing+Groovy+Code#GMaven-ExecutingGroovyCode-ExecuteaLocalGroovyScript" class="externalLink">GMaven.</a> See the <a href="http://fisheye.codehaus.org/browse/gmod/httpbuilder/trunk/pom.xml?r=root:#l122" class="externalLink">POM</a> and <a href="http://fisheye.codehaus.org/browse/gmod/httpbuilder/trunk/src/main/script/release_tweet.groovy?r=root:" class="externalLink">tweet script</a> for details.</p>
+</div>
+</div>
+
+      </div>
+    </div>
+    <div class="clear">
+      <hr/>
+    </div>
+    <div id="footer">
+      <div class="xright">&#169;  
+          2008-2009
+    
+          
+  
+
+  
+    
+            
+  
+    
+  </div>
+      <div class="clear">
+        <hr/>
+      </div>
+    </div>
+  </body>
+</html>

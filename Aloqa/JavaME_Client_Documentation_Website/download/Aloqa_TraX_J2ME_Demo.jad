@@ -1,0 +1,8 @@
+MIDlet-1: Aloqa TraX J2ME Demo,/images/aloqa32.png,com.aloqa.trax.client.LocationMIDlet
+MIDlet-Jar-Size: 64038
+MIDlet-Jar-URL: http://dev.aloqa.com/download/Aloqa_TraX_J2ME_Demo.jar
+MIDlet-Name: Aloqa TraX J2ME Demo
+MIDlet-Vendor: Aloqa GmbH www.aloqa.com
+MIDlet-Version: 1.0.0
+MicroEdition-Configuration: CLDC-1.1
+MicroEdition-Profile: MIDP-2.0

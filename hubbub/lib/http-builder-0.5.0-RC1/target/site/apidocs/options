@@ -1,0 +1,33 @@
+-classpath
+'c:/Documents and Settings/tnichols/Documents/dev/sandbox/http-builder/target/classes;C:/Documents and Settings/tnichols/.m2/repository/xml-apis/xml-apis/1.3.03/xml-apis-1.3.03.jar;C:/Documents and Settings/tnichols/.m2/repository/net/sf/json-lib/json-lib/2.2.2/json-lib-2.2.2-jdk15.jar;C:/Documents and Settings/tnichols/.m2/repository/commons-lang/commons-lang/2.4/commons-lang-2.4.jar;C:/Documents and Settings/tnichols/.m2/repository/org/apache/httpcomponents/httpclient/4.0-beta2/httpclient-4.0-beta2.jar;C:/Documents and Settings/tnichols/.m2/repository/org/apache/httpcomponents/httpcore/4.0-beta3/httpcore-4.0-beta3.jar;C:/Documents and Settings/tnichols/.m2/repository/commons-collections/commons-collections/3.2/commons-collections-3.2.jar;C:/Documents and Settings/tnichols/.m2/repository/commons-beanutils/commons-beanutils/1.7.0/commons-beanutils-1.7.0.jar;C:/Documents and Settings/tnichols/.m2/repository/asm/asm-tree/2.2.3/asm-tree-2.2.3.jar;C:/Documents and Settings/tnichols/.m2/repository/org/codehaus/groovy/groovy/1.6.3/groovy-1.6.3.jar;C:/Documents and Settings/tnichols/.m2/repository/net/sf/ezmorph/ezmorph/1.0.4/ezmorph-1.0.4.jar;C:/Documents and Settings/tnichols/.m2/repository/xerces/xercesImpl/2.8.1/xercesImpl-2.8.1.jar;C:/Documents and Settings/tnichols/.m2/repository/commons-logging/commons-logging/1.1.1/commons-logging-1.1.1.jar;C:/Documents and Settings/tnichols/.m2/repository/antlr/antlr/2.7.7/antlr-2.7.7.jar;C:/Documents and Settings/tnichols/.m2/repository/asm/asm-analysis/2.2.3/asm-analysis-2.2.3.jar;C:/Documents and Settings/tnichols/.m2/repository/asm/asm/2.2.3/asm-2.2.3.jar;C:/Documents and Settings/tnichols/.m2/repository/xml-resolver/xml-resolver/1.2/xml-resolver-1.2.jar;C:/Documents and Settings/tnichols/.m2/repository/net/sourceforge/nekohtml/nekohtml/1.9.9/nekohtml-1.9.9.jar;C:/Documents and Settings/tnichols/.m2/repository/commons-codec/commons-codec/1.3/commons-codec-1.3.jar;C:/Documents and Settings/tnichols/.m2/repository/asm/asm-util/2.2.3/asm-util-2.2.3.jar'
+-encoding
+'UTF-8'
+-protected
+-sourcepath
+'c:/Documents and Settings/tnichols/Documents/dev/sandbox/http-builder/src/main/java'
+-author
+-bottom
+'Copyright &#169; 2008-2009. All Rights Reserved.'
+-charset
+'UTF-8'
+-d
+'c:/Documents and Settings/tnichols/Documents/dev/sandbox/http-builder/target/site/apidocs'
+-docencoding
+'UTF-8'
+-doctitle
+'HTTP client framework for Groovy 0.5.0-RC1 API'
+-link
+'http://java.sun.com/j2se/1.5.0/docs/api'
+-link
+'http://hc.apache.org/httpcomponents-client/httpclient/apidocs'
+-link
+'http://hc.apache.org/httpcomponents-core/httpcore/apidocs'
+-link
+'http://groovy.codehaus.org/api'
+-link
+'http://json-lib.sourceforge.net/apidocs/jdk15'
+-linksource
+-use
+-version
+-windowtitle
+'HTTP client framework for Groovy 0.5.0-RC1 API'

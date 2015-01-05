@@ -1,0 +1,9 @@
+MIDlet-1: Aloqa MapDemo,/res/images/aloqa32.png,com.aloqa.trax.client.MapMIDlet
+MIDlet-Jar-Size: 243050
+MIDlet-Jar-URL: http://dev.aloqa.com/download/aloqa_client2.jar
+MIDlet-Name: aloqa_client2 Midlet Suite
+MIDlet-Vendor: Midlet Suite Vendor
+MIDlet-Version: 1.0.0
+MicroEdition-Configuration: CLDC-1.1
+MicroEdition-Profile: MIDP-2.0
+
